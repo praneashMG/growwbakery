@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home2 - Groww Cakes</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+    [dir="rtl"] .title {
+  margin-right: 20px !important;
+}
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+ [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative min-h-[90vh] flex items-center justify-center text-center overflow-hidden">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="images/bg3.avif"
+         class="w-full h-full object-cover">
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl px-6 text-white">
+
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight">
+      Freshly Baked Cakes <br>
+      For Every Celebration <i class="bi bi-cake"></i>
+    </h1>
+
+    <p class="mt-6 text-gray-200 text-lg leading-relaxed">
+      Discover delicious cakes, cupcakes, and desserts crafted with premium
+      ingredients. Perfect for birthdays, weddings, and special occasions.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+
+      <a href="contact.html"
+        class="bg-[#EC4899] px-8 py-4 rounded-full font-semibold hover:bg-[#B9799D] transition">
+        Order Your Cake
+      </a>
+
+      <a href="service.html"
+        class="btn1 border border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#EC4899] transition">
+        Design Custom Cake
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION1 -->
+ <section class="py-20 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        Why Choose Us
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        The Sweetest Choice for Every Celebration
+      </h2>
+
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        We use only high-quality ingredients to ensure every cake tastes
+          delicious.
+      </p>
+
+    </div>
+
+
+    <!-- Features -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Feature 1 -->
+      <div class="text-center p-8 rounded-3xl hover:shadow-xl transition">
+
+        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-100 rounded-full">
+          <i class="bi bi-egg-fried text-[#EC4899] text-2xl"></i>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Fresh Ingredients
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3">
+          We use only high-quality ingredients to ensure every cake tastes
+          delicious.
+        </p>
+
+      </div>
+
+
+      <!-- Feature 2 -->
+      <div class="text-center p-8 rounded-3xl hover:shadow-xl transition">
+
+        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-100 rounded-full">
+          <i class="bi bi-palette text-[#EC4899] text-2xl"></i>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Custom Designs
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3">
+          We use only high-quality ingredients to ensure every cake tastes
+          delicious.
+        </p>
+
+      </div>
+
+
+      <!-- Feature 3 -->
+      <div class="text-center p-8 rounded-3xl hover:shadow-xl transition">
+
+        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-100 rounded-full">
+          <i class="bi bi-truck text-[#EC4899] text-2xl"></i>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Faster Delivery
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3">
+          We use only high-quality ingredients to ensure every cake tastes
+          delicious.
+        </p>
+
+      </div>
+
+
+      <!-- Feature 4 -->
+      <div class="text-center p-8 rounded-3xl hover:shadow-xl transition">
+
+        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-100 rounded-full">
+          <i class="bi bi-award text-[#EC4899] text-2xl"></i>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Premium Quality
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3">
+          We use only high-quality ingredients to ensure every cake tastes
+          delicious.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-20 bg-gradient-to-r from-[#EC4899] to-[#B9799D] text-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Image -->
+      <div class="relative">
+
+        <img src="images/img7.avif"
+          class="w-full h-[350px] object-cover rounded-3xl shadow-xl">
+
+      </div>
+
+
+      <!-- Content -->
+      <div>
+
+        <span class="btn bg-white text-[#EC4899] px-4 py-1 rounded-full text-sm font-semibold">
+          Custom Cake
+        </span>
+
+        <h2 class="text-4xl md:text-5xl font-bold mt-6 leading-tight">
+          Design Your Dream Cake
+        </h2>
+
+        <p class="mt-6 text-pink-100 text-lg leading-relaxed">
+          Looking for a unique cake for your celebration? Our expert bakers
+          create custom cakes tailored to your theme, flavor, and design.
+        </p>
+
+        <!-- Features -->
+        <div class="grid grid-cols-2 gap-6 mt-8">
+
+          <div class="flex items-center gap-3">
+            <i class="bi bi-palette text-2xl"></i>
+            <p>Custom Designs</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="bi bi-cake2 text-2xl"></i>
+            <p>Premium Cakes</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="bi bi-calendar-check text-2xl"></i>
+            <p>Flexible Delivery</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="bi bi-stars text-2xl"></i>
+            <p>Creative Decoration</p>
+          </div>
+
+        </div>
+
+        <!-- Button -->
+        <a href="contact.html"
+          class="btn inline-block mt-8 bg-white text-[#EC4899] px-8 py-4 rounded-full font-semibold hover:bg-pink-100 transition">
+          Request Custom Cake
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+ <section class="py-20 bg-pink-50">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        Our Services
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        Delivery & Store Information
+      </h2>
+
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        We ensure fresh cakes are delivered on time for your special
+        celebrations with reliable service and flexible pickup options.
+      </p>
+
+    </div>
+
+
+    <!-- Info Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Card 1 -->
+      <div class="card border border-pink-300 bg-white p-8 rounded-3xl shadow hover:shadow-xl transition text-center">
+
+        <i class="bi bi-truck text-[#EC4899] text-4xl"></i>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Fast Delivery
+        </h3>
+
+        <p class="text-gray-600 mt-3 text-sm">
+          We deliver freshly baked cakes to your doorstep quickly.
+        </p>
+
+      </div>
+
+
+      <!-- Card 2 -->
+      <div class="card border border-pink-300 bg-white p-8 rounded-3xl shadow hover:shadow-xl transition text-center">
+
+        <i class="bi bi-shop text-[#EC4899] text-4xl"></i>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Store Pickup
+        </h3>
+
+        <p class="text-gray-600 mt-3 text-sm">
+          Order online and pick up your cake from our bakery store.
+        </p>
+
+      </div>
+
+
+      <!-- Card 3 -->
+      <div class="card border border-pink-300 bg-white p-8 rounded-3xl shadow hover:shadow-xl transition text-center">
+
+        <i class="bi bi-clock text-[#EC4899] text-4xl"></i>
+
+        <h3 class="text-xl font-semibold mt-6 text-gray-800">
+          Opening Hours
+        </h3>
+
+        <p class="text-gray-600 mt-3 text-sm">
+          Monday – Sunday <br>
+          9:00 AM – 9:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+ <!-- SECTION4 -->
+ <section class="py-20 bg-pink-50">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="card border border-pink-300 bg-white rounded-3xl shadow-xl p-10 lg:p-16">
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Content -->
+        <div>
+
+          <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+            Stay Updated
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+            Get Sweet Deals & Cake Updates
+          </h2>
+
+          <p class="text-gray-600 mt-6 leading-relaxed">
+            Subscribe to Groww Cakes newsletter and be the first to know
+            about new cake designs, seasonal specials, and exclusive
+            discounts for your celebrations.
+          </p>
+
+        </div>
+
+
+        <!-- Form -->
+        <div>
+
+          <form class="flex flex-col sm:flex-row gap-4">
+
+            <input type="email"
+              placeholder="Enter your email address"
+              class="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EC4899]">
+
+            <button onclick="window.location.href='contact.html'"
+              class="bg-[#EC4899] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#B9799D] transition">
+              Subscribe
+            </button>
+
+          </form>
+
+          <p class="text-sm text-gray-500 mt-4">
+            We respect your privacy. No spam emails.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION5 -->
+ <section class="py-24 bg-[#FFF1F6]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        Customer Love
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        What Our Customers Say
+      </h2>
+
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Every cake we bake is made with love. Here are some sweet
+        words from our happy customers.
+      </p>
+    </div>
+
+    <!-- Round Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+
+      <!-- Testimonial 1 -->
+      <div class="card border border-pink-300 w-80 h-80 bg-white rounded-full shadow-xl flex flex-col items-center justify-center text-center p-8 hover:scale-105 transition">
+
+        <img src="images/client1.avif"
+        class="w-16 h-16 rounded-full object-cover mb-4">
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Groww Cakes made our wedding celebration perfect.
+          The cake design was stunning!
+        </p>
+
+        <h4 class="font-bold text-gray-800 mt-4">Priya Sharma</h4>
+
+        <div class="text-[#EC4899] mt-2">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="card border border-pink-300 w-80 h-80 bg-white rounded-full shadow-xl flex flex-col items-center justify-center text-center p-8 hover:scale-105 transition">
+
+        <img src="images/client2.avif"
+        class="w-16 h-16 rounded-full object-cover mb-4">
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Groww Cakes made our wedding celebration perfect.
+          The cake design was stunning!
+        </p>
+
+        <h4 class="font-bold text-gray-800 mt-4">Rahul Mehta</h4>
+
+        <div class="text-[#EC4899] mt-2">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="card border border-pink-300 w-80 h-80 bg-white rounded-full shadow-xl flex flex-col items-center justify-center text-center p-8 hover:scale-105 transition sm:col-span-2 sm:justify-self-center lg:col-span-1">
+
+        <img src="images/client3.avif"
+        class="w-16 h-16 rounded-full object-cover mb-4">
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Groww Cakes made our wedding celebration perfect.
+          The cake design was stunning!
+        </p>
+
+        <h4 class="font-bold text-gray-800 mt-4">Anjali Verma</h4>
+
+        <div class="text-[#EC4899] mt-2">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+    <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Groww Cakes</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+    [dir="rtl"] .title {
+  margin-right: 20px !important;
+}
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+ [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('images/bg5.avif');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="max-w-3xl mx-auto px-6 py-32 relative z-10 flex flex-col items-center text-center">
+
+    <!-- Text Content -->
+    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+      Get In Touch With Groww Cakes
+    </h1>
+
+    <p class="mt-6 text-lg text-white/90">
+      Have a question, custom cake order, or want to know more about our bakery? 
+      We’re here to make your celebration extra sweet!
+    </p>
+
+    <a href="contact.html" 
+       class="mt-8 inline-block bg-[#EC4899] hover:bg-[#B9799D] text-white font-semibold px-8 py-4 rounded-full shadow-lg transition">
+      Contact Us
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SECTION1 -->
+ <section class="py-24 bg-[#FFF1F6]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        Contact Information
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        Reach Out To Groww Cakes
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        We’re always happy to help! Reach out via phone, email, or visit our bakery.
+      </p>
+    </div>
+
+    <!-- Info Cards + Map -->
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- Phone Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-[#EC4899] text-white rounded-full text-xl mb-4">
+          <i class="bi bi-telephone-fill"></i>
+        </div>
+        <h4 class="font-bold text-gray-800">Call Us</h4>
+        <p class="text-gray-600 mt-2">+91 98765 43210</p>
+      </div>
+
+      <!-- Email Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-[#EC4899] text-white rounded-full text-xl mb-4">
+          <i class="bi bi-envelope-fill"></i>
+        </div>
+        <h4 class="font-bold text-gray-800">Email Us</h4>
+        <p class="text-gray-600 mt-2">info@growwcakes.com</p>
+      </div>
+
+      <!-- Location Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition">
+        <div class="w-14 h-14 flex items-center justify-center bg-[#EC4899] text-white rounded-full text-xl mb-4">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <h4 class="font-bold text-gray-800">Visit Us</h4>
+        <p class="text-gray-600 mt-2">Chennai, Tamil Nadu, India</p>
+      </div>
+
+    </div>
+
+    <!-- Google Map -->
+    <div class="mt-12 rounded-3xl overflow-hidden shadow-lg">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.123456789!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264e2b1b0c0ff%3A0xabcdef123456789!2sChennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sin!4v1689012345678!5m2!1sen!2sin" 
+        width="100%" 
+        height="400" 
+        class="border-0" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        Send Us a Message
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        Get in Touch
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Fill out the form below and our team at Groww Cakes will get back to you as soon as possible.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form action="#" class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Name -->
+      <div class="flex flex-col">
+        <label class="text-gray-700 font-medium mb-2" for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe"
+               class="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EC4899] transition" />
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label class="text-gray-700 font-medium mb-2" for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com"
+               class="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EC4899] transition" />
+      </div>
+
+      <!-- Phone -->
+      <div class="flex flex-col">
+        <label class="text-gray-700 font-medium mb-2" for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"
+               class="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EC4899] transition" />
+      </div>
+
+      <!-- Subject -->
+      <div class="flex flex-col">
+        <label class="text-gray-700 font-medium mb-2" for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Custom Cake Inquiry"
+               class="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EC4899] transition" />
+      </div>
+
+      <!-- Message -->
+      <div class="flex flex-col md:col-span-2">
+        <label class="text-gray-700 font-medium mb-2" for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Type your message here..."
+                  class="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EC4899] transition"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="md:col-span-2 text-center">
+        <button type="submit"
+                class="bg-[#EC4899] hover:bg-[#B9799D] text-white font-semibold px-8 py-4 rounded-full shadow-lg transition">
+          Send Message
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+ </section>
+<!--SECTION3 -->
+<section class="py-24 bg-[#FFF1F6]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        FAQ
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Got questions? We’ve got answers! Check out our most common queries.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="max-w-3xl mx-auto space-y-4">
+
+      <!-- FAQ 1 -->
+      <div class="border border-pink-200 rounded-xl overflow-hidden">
+        <button class="w-full px-6 py-4 flex justify-between items-center bg-white focus:outline-none hover:bg-pink-50 transition faq-toggle">
+          <span class="btn text-gray-800 font-semibold">Do you deliver outside Chennai?</span>
+          <i class="bi bi-chevron-down text-[#EC4899] text-xl"></i>
+        </button>
+        <div class="px-6 py-4 bg-white text-gray-600 hidden faq-content">
+          Yes! We deliver within Tamil Nadu. For outside states, please contact us for special arrangements.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="border border-pink-200 rounded-xl overflow-hidden">
+        <button class="w-full px-6 py-4 flex justify-between items-center bg-white focus:outline-none hover:bg-pink-50 transition faq-toggle">
+          <span class="btn text-gray-800 font-semibold">Can I customize my cake design?</span>
+          <i class="bi bi-chevron-down text-[#EC4899] text-xl"></i>
+        </button>
+        <div class="px-6 py-4 bg-white text-gray-600 hidden faq-content">
+          Absolutely! You can send your design ideas through our custom order form or contact us directly.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="border border-pink-200 rounded-xl overflow-hidden">
+        <button class="w-full px-6 py-4 flex justify-between items-center bg-white focus:outline-none hover:bg-pink-50 transition faq-toggle">
+          <span class="btn text-gray-800 font-semibold">How early should I place an order?</span>
+          <i class="bi bi-chevron-down text-[#EC4899] text-xl"></i>
+        </button>
+        <div class="px-6 py-4 bg-white text-gray-600 hidden faq-content">
+          For custom cakes, we recommend placing orders at least 3-5 days in advance. For cupcakes or pastries, 1-2 days is sufficient.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+     <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+   
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      content.classList.toggle('hidden');
+      btn.querySelector('i').classList.toggle('rotate-180');
+    });
+  });
+
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

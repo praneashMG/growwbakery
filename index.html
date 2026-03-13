@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home1 - Groww Cakes</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+    [dir="rtl"] .title {
+  margin-right: 20px !important;
+}
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+ [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative overflow-hidden bg-gradient-to-r from-[#EC4899] to-[#B9799D] text-white">
+
+  <!-- Decorative Shapes -->
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-white opacity-10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- TEXT CONTENT -->
+    <div class="relative z-10 text-center lg:text-left">
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight">
+        Delicious Cakes <br>
+        For Every Celebration <i class="bi bi-cake2-fill"></i>
+      </h1>
+
+      <p class="mt-6 text-pink-100 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+        Discover beautifully crafted cakes, cupcakes, and desserts made with
+        premium ingredients. Perfect for birthdays, weddings, and special moments.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-8">
+
+        <a href="gallery.html"
+          class="btn bg-white text-[#EC4899] px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+          Explore Cakes
+        </a>
+
+        <a href="service.html"
+          class="btn1 border border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#EC4899] transition">
+          Custom Cake Order
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="relative z-10 flex justify-center">
+
+      <div class="relative w-full max-w-md">
+
+        <img src="images/bg1.avif"
+          class="w-full h-[300px] md:h-[380px] lg:h-[450px] object-cover rounded-3xl shadow-2xl">
+
+        <!-- Floating Badge -->
+        <div class="absolute -top-5 -right-5 bg-white text-[#EC4899] px-5 py-3 rounded-xl shadow-lg font-semibold text-sm">
+          ⭐ Best Seller
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SECTION1 -->
+ <section class="py-20 bg-pink-50">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-[#EC4899]">
+        Our Cake Categories
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto">
+        Explore our delicious range of freshly baked cakes made for every
+        celebration and special moment.
+      </p>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Category Card -->
+      <div class="card border border-pink-300 rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/img2.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-[#EC4899] mb-2">
+            Birthday Cakes
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Perfect cakes to celebrate birthdays with sweetness.
+          </p>
+
+          <a href="service.html"
+            class="inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Explore
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Category Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/img3.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-[#EC4899] mb-2">
+            Wedding Cakes
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">
+             Perfect cakes to celebrate birthdays with sweetness.
+          </p>
+
+          <a href="service.html"
+            class="inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Explore
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Category Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/img4.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-[#EC4899] mb-2">
+            Cupcakes
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Perfect cakes to celebrate birthdays with sweetness.
+          </p>
+
+          <a href="service.html"
+            class="inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Explore
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Category Card -->
+      <div class="card border border-pink-300 bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/img5.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold text-[#EC4899] mb-2">
+            Custom Cakes
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Perfect cakes to celebrate birthdays with sweetness.
+          </p>
+
+          <a href="service.html"
+            class="inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Explore
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-20 bg-pink-50">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- IMAGE -->
+    <div class="relative">
+
+      <img src="images/img1.avif"
+        class="w-full h-[350px] md:h-[420px] object-cover rounded-3xl shadow-xl">
+
+    </div>
+
+    <!-- TEXT CONTENT -->
+    <div>
+
+      <span class="text-[#EC4899] font-semibold uppercase tracking-wider">
+        About Groww Cakes
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-4 leading-tight">
+        Fresh Cakes Crafted With Love
+      </h2>
+
+      <p class="text-gray-600 mt-6 leading-relaxed">
+        At Groww Cakes, we bake delicious cakes, cupcakes, and pastries using
+        the finest ingredients. Our passion is creating beautiful and flavorful
+        desserts that make every celebration memorable.
+      </p>
+
+      <p class="text-gray-600 mt-4 leading-relaxed">
+        Whether it's a birthday, wedding, or special occasion, our expert bakers
+        design custom cakes that perfectly match your celebration.
+      </p>
+
+      <!-- FEATURES -->
+      <div class="grid grid-cols-2 gap-6 mt-8">
+
+        <div class="flex items-center gap-3">
+          <i class="bi bi-egg-fried text-[#EC4899] text-xl"></i>
+          <p class="text-gray-700 font-medium">Fresh Ingredients</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <i class="bi bi-palette text-[#EC4899] text-xl"></i>
+          <p class="text-gray-700 font-medium">Custom Designs</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <i class="bi bi-truck text-[#EC4899] text-xl"></i>
+          <p class="text-gray-700 font-medium">Fast Delivery</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <i class="bi bi-award text-[#EC4899] text-xl"></i>
+          <p class="text-gray-700 font-medium">Premium Quality</p>
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <a href="about.html"
+        class="inline-block mt-8 bg-[#EC4899] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#B9799D] transition">
+        Learn More
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+ <section class="py-20 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-[#EC4899]">
+        Best Selling Cakes
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto">
+        Discover our most loved cakes made with fresh ingredients and
+        crafted to make every celebration special.
+      </p>
+    </div>
+
+    <!-- Cakes Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Cake Card -->
+      <div class="card border border-pink-300 bg-pink-50 rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/cake1.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Chocolate Cake
+          </h3>
+
+          <p class="text-[#EC4899] font-bold text-xl mt-2">
+            ₹799
+          </p>
+
+          <a href="contact.html"
+            class="mt-4 inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Order Now
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Cake Card -->
+      <div class="card border border-pink-300 bg-pink-50 rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/cake2.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Strawberry Cake
+          </h3>
+
+          <p class="text-[#EC4899] font-bold text-xl mt-2">
+            ₹899
+          </p>
+
+          <a href="contact.html"
+            class="mt-4 inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Order Now
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Cake Card -->
+      <div class="card border border-pink-300 bg-pink-50 rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/cake3.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Red Velvet Cake
+          </h3>
+
+          <p class="text-[#EC4899] font-bold text-xl mt-2">
+            ₹999
+          </p>
+
+          <a href="contact.html"
+            class="mt-4 inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Order Now
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Cake Card -->
+      <div class="card border border-pink-300 bg-pink-50 rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition">
+
+        <div class="overflow-hidden">
+          <img src="images/cake4.avif"
+            class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="p-6 text-center">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Vanilla Cake
+          </h3>
+
+          <p class="text-[#EC4899] font-bold text-xl mt-2">
+            ₹699
+          </p>
+
+          <a href="contact.html"
+            class="mt-4 inline-block bg-[#EC4899] text-white px-6 py-2 rounded-full hover:bg-[#B9799D] transition">
+            Order Now
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION4 -->
+ <section class="py-20 bg-pink-50">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-[#EC4899]">
+        Our Cake Gallery
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto">
+        Take a look at some of our beautiful cake creations crafted for
+        birthdays, weddings, and special celebrations.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Image -->
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake6.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake7.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake8.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake9.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake10.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake11.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake12.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group">
+        <img src="images/cake13.avif"
+          class="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500">
+      </div>
+
+    </div>
+
+    <!-- Button -->
+    <div class="text-center mt-12">
+      <a href="gallery.html"
+        class="bg-[#EC4899] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#B9799D] transition">
+        View Full Gallery
+      </a>
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION5 -->
+ <section class="py-20 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-[#EC4899]">
+        What Our Customers Say
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto">
+        Our customers love our cakes and desserts. Here are some of their
+        sweet experiences with Groww Bakery.
+      </p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Review Card -->
+      <div class="card border border-pink-300 bg-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition">
+
+        <!-- Stars -->
+        <div class="flex text-yellow-400 mb-4 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          The birthday cake we ordered was absolutely amazing! Beautiful design
+          and delicious taste. Everyone loved it.
+        </p>
+
+        <div class="flex items-center mt-6 gap-3">
+          <img src="images/client1.avif"
+            class="w-12 h-12 rounded-full object-cover">
+
+          <div>
+            <h4 class="font-semibold text-gray-800">Priya S</h4>
+            <p class="text-xs text-gray-500">Chennai</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Review Card -->
+      <div class="card border border-pink-300 bg-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition">
+
+        <div class="flex text-yellow-400 mb-4 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          The birthday cake we ordered was absolutely amazing! Beautiful design
+          and delicious taste. Everyone loved it.
+        </p>
+
+        <div class="flex items-center mt-6 gap-3">
+          <img src="images/client2.avif"
+            class="w-12 h-12 rounded-full object-cover">
+
+          <div>
+            <h4 class="font-semibold text-gray-800">Rahul K</h4>
+            <p class="text-xs text-gray-500">Bangalore</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Review Card -->
+      <div class="card border border-pink-300 bg-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition">
+
+        <div class="flex text-yellow-400 mb-4 text-lg">
+          ★★★★★
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+         The birthday cake we ordered was absolutely amazing! Beautiful design
+          and delicious taste. Everyone loved it.
+        </p>
+
+        <div class="flex items-center mt-6 gap-3">
+          <img src="images/client3.avif"
+            class="w-12 h-12 rounded-full object-cover">
+
+          <div>
+            <h4 class="font-semibold text-gray-800">Ananya R</h4>
+            <p class="text-xs text-gray-500">Coimbatore</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+   <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

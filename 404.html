@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Bakery • 404 | Artisan Cakes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            background: #fcf5f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            color: #2c1b23;
+        }
+
+        /* elegant marble texture */
+        body::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.02) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(185, 121, 157, 0.02) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, rgba(236, 72, 153, 0.01) 0px, rgba(236, 72, 153, 0.01) 1px, transparent 1px, transparent 10px);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* main card - premium bakery aesthetic */
+        .error-card {
+            background: rgba(255, 251, 253, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 64px 64px 48px 48px;
+            padding: 3.5rem 4rem;
+            box-shadow: 
+                0 30px 60px -20px rgba(236, 72, 153, 0.25),
+                0 0 0 1px rgba(236, 72, 153, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 220, 240, 0.6);
+            transition: all 0.4s ease;
+        }
+
+        .error-card:hover {
+            box-shadow: 
+                0 40px 80px -20px rgba(236, 72, 153, 0.3),
+                0 0 0 1px rgba(236, 72, 153, 0.2),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.9);
+        }
+
+        /* cake showcase area */
+        .cake-showcase {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        /* left side - cake illustration */
+        .cake-art {
+            flex: 1.2;
+            position: relative;
+            min-height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* three-tier cake SVG */
+        .premium-cake {
+            width: 100%;
+            max-width: 380px;
+            filter: drop-shadow(0 20px 20px rgba(236, 72, 153, 0.15));
+            animation: cakeFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes cakeFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
+        }
+
+        /* cake tiers */
+        .cake-base {
+            animation: tierGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes tierGlow {
+            0%, 100% { filter: drop-shadow(0 0 0 #EC4899); }
+            50% { filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.4)); }
+        }
+
+        /* right side - 404 message */
+        .error-message-area {
+            flex: 1;
+        }
+
+        .error-code-elegant {
+            font-size: 8rem;
+            font-weight: 500;
+            line-height: 0.9;
+            letter-spacing: -4px;
+            color: #2c1b23;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .code-digit {
+            background: linear-gradient(145deg, #2c1b23 0%, #4a2f3b 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 4px 12px rgba(236, 72, 153, 0.1);
+        }
+
+        .code-cake-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.2rem;
+            animation: markGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes markGlow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .cherry-icon {
+            color: #EC4899;
+            font-size: 5rem;
+            line-height: 1;
+            display: inline-block;
+            transform: rotate(-5deg);
+            filter: drop-shadow(0 4px 6px rgba(236, 72, 153, 0.3));
+        }
+
+        /* bakery title */
+        .bakery-name {
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #b9799d;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            border-left: 3px solid #EC4899;
+            padding-left: 1.5rem;
+        }
+
+        .main-headline {
+            font-size: 3rem;
+            font-weight: 500;
+            color: #2c1b23;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .main-headline span {
+            color: #EC4899;
+            font-style: italic;
+            border-bottom: 2px dotted rgba(236, 72, 153, 0.3);
+        }
+
+        .description-text {
+            font-size: 1.3rem;
+            color: #4f3a45;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            max-width: 450px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        /* premium button */
+        .cake-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: #EC4899;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            box-shadow: 0 12px 28px -10px #EC4899;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .cake-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transform: rotate(25deg);
+            transition: left 0.6s ease;
+        }
+
+        .cake-button:hover {
+            background: #d63d86;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 32px -12px #EC4899;
+        }
+
+        .cake-button:hover::after {
+            left: 100%;
+        }
+
+        .cake-button svg {
+            transition: transform 0.4s ease;
+        }
+
+        .cake-button:hover svg {
+            transform: translateX(8px) rotate(-5deg);
+        }
+
+        /* cake details row */
+        .cake-details {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(185, 121, 157, 0.25);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #5d4553;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        .detail-dot {
+            width: 8px;
+            height: 8px;
+            background: #EC4899;
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .detail-item:hover .detail-dot {
+            opacity: 1;
+            transform: scale(1.3);
+            background: #b9799d;
+        }
+
+        /* floating cake decorations */
+        .floating-cake-piece {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 80px;
+            height: 80px;
+            background: rgba(236, 72, 153, 0.03);
+            border-radius: 50% 50% 30% 30%;
+            border: 1px dashed rgba(236, 72, 153, 0.2);
+            animation: floatPiece 12s infinite alternate;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .floating-cake-piece::after {
+            content: '🍰';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        @keyframes floatPiece {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(30px, -30px) rotate(10deg); }
+        }
+
+        .floating-cake-piece-2 {
+            bottom: 5%;
+            left: 3%;
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            background: rgba(185, 121, 157, 0.02);
+            border-radius: 40% 60% 40% 60%;
+            animation: floatPiece2 15s infinite alternate-reverse;
+            pointer-events: none;
+        }
+
+        @keyframes floatPiece2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, 30px) rotate(-15deg); }
+        }
+
+        /* responsive */
+        @media (max-width: 1000px) {
+            .cake-showcase {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .error-code-elegant {
+                font-size: 6rem;
+                justify-content: center;
+            }
+            
+            .main-headline {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+            
+            .description-text {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .cake-button {
+                display: flex;
+                width: fit-content;
+                margin: 0 auto;
+            }
+            
+            .cake-details {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .error-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .error-code-elegant {
+                font-size: 4.5rem;
+            }
+            
+            .cherry-icon {
+                font-size: 3rem;
+            }
+            
+            .cake-details {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .main-headline {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- floating decorative elements -->
+    <div class="floating-cake-piece"></div>
+    <div class="floating-cake-piece-2"></div>
+    
+    <div class="container">
+        <div class="error-card">
+            <!-- cake showcase section -->
+            <div class="cake-showcase">
+                <!-- left side - professional cake illustration -->
+                <div class="cake-art">
+                    <svg class="premium-cake" viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- bottom tier -->
+                        <rect x="60" y="200" width="180" height="70" rx="12" fill="#f9e2ed" stroke="#EC4899" stroke-width="1.5" class="cake-base"/>
+                        <rect x="70" y="205" width="160" height="10" rx="5" fill="#b9799d" opacity="0.3"/>
+                        <rect x="70" y="235" width="160" height="10" rx="5" fill="#b9799d" opacity="0.3"/>
+                        
+                        <!-- middle tier -->
+                        <rect x="80" y="130" width="140" height="70" rx="12" fill="#fad5e8" stroke="#EC4899" stroke-width="1.5" class="cake-base"/>
+                        <rect x="90" y="135" width="120" height="8" rx="4" fill="#EC4899" opacity="0.2"/>
+                        <rect x="90" y="160" width="120" height="8" rx="4" fill="#EC4899" opacity="0.2"/>
+                        
+                        <!-- top tier -->
+                        <rect x="100" y="70" width="100" height="60" rx="12" fill="#fbc7e4" stroke="#EC4899" stroke-width="1.5" class="cake-base"/>
+                        
+                        <!-- cherry on top -->
+                        <circle cx="150" cy="55" r="16" fill="#EC4899" stroke="#b04a7c" stroke-width="2"/>
+                        <path d="M145 45 L140 30" stroke="#5a7a4c" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="139" cy="28" r="4" fill="#4a5e3a"/>
+                        
+                        <!-- decorations -->
+                        <circle cx="120" cy="100" r="6" fill="#b9799d" opacity="0.6"/>
+                        <circle cx="180" cy="100" r="6" fill="#b9799d" opacity="0.6"/>
+                        <circle cx="140" cy="165" r="7" fill="#EC4899" opacity="0.3"/>
+                        <circle cx="170" cy="235" r="8" fill="#EC4899" opacity="0.3"/>
+                        <circle cx="120" cy="245" r="8" fill="#EC4899" opacity="0.3"/>
+                        
+                        <!-- cake stand shadow -->
+                        <rect x="40" y="270" width="220" height="15" rx="7.5" fill="#d3b1c2" opacity="0.3"/>
+                    </svg>
+                </div>
+                
+                <!-- right side - 404 content -->
+                <div class="error-message-area">
+                    
+                    <div class="error-code-elegant">
+                        <span class="code-digit">4</span>
+                        <span class="code-cake-mark">
+                            <span class="cherry-icon">🍒</span>
+                        </span>
+                        <span class="code-digit">0</span>
+                        <span class="code-digit">4</span>
+                    </div>
+                    
+                    <h1 class="main-headline">
+                       Looks like this slice of the internet is missing! 
+                    </h1>
+                    
+                    
+                    <a href="index.html" class="cake-button">
+                        <span>return to Home</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
