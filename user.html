@@ -4,14 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Dashboard - Groww Cakes</title>
+  <title>User Dashboard - Bake Hub</title>
   <link rel="icon" href="images/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script>
-    tailwind.config = { darkMode: 'class' }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
   </script>
 </head>
 
@@ -26,7 +35,7 @@
 
       <div class="p-6 text-2xl font-bold flex justify-between items-center">
         <h1 class="text-2xl font-bold text-white">
-          <a href="index.html">Groww Cakes</a>
+          <a href="index.html">Bake Hub</a>
         </h1>
         <button id="closeSidebar" class="lg:hidden text-xl">
           <i class="bi bi-x-lg"></i>
@@ -34,22 +43,22 @@
       </div>
 
       <nav class="flex-1 p-4 space-y-2 text-sm overflow-y-auto">
-        <a class="block px-4 py-3 rounded-xl bg-[#f3dde9] text-[#EC4899] font-semibold cursor-pointer">
+        <a id="nav-dashboard" onclick="showSection('dashboard')" class="nav-link block px-4 py-3 rounded-xl bg-[#f3dde9] text-[#EC4899] font-semibold cursor-pointer transition">
           <i class="bi bi-house-door-fill mr-2"></i> My Dashboard
         </a>
-        <a class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-orders" onclick="showSection('orders')" class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-basket-fill mr-2"></i> My Orders
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-custom" onclick="showSection('custom')" class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-palette-fill mr-2"></i> Custom Cake Request
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-deliveries" onclick="showSection('deliveries')" class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-calendar-check-fill mr-2"></i> Manage Delivery Dates
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-addresses" onclick="showSection('addresses')" class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-geo-alt-fill mr-2"></i> Saved Addresses
         </a>
-        <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition">
+        <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition text-white mt-10">
           <i class="bi bi-box-arrow-left mr-2"></i> Logout
         </a>
       </nav>
@@ -64,7 +73,7 @@
       </div>
 
       <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
-        <img src="images/client1.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]" alt="Profile">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full border-2 border-[#4B0082] object-cover" alt="Profile">
         <div>
           <p class="font-semibold text-sm ">Jane Doe</p>
           <p class="text-xs text-white/80">Sweet Member</p>
@@ -75,14 +84,14 @@
 
     <div class="flex-1 flex flex-col">
 
-      <header class="bg-white dark:bg-[#1a1a2e] shadow px-4 sm:px-6 py-3 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-[#EC4899] dark:text-white">My Dashboard</h1>
+      <header class="bg-white dark:bg-[#1a1a2e] shadow px-4 sm:px-6 py-3 flex justify-between items-center z-10">
+        <h1 id="page-title" class="text-xl font-bold text-[#EC4899] dark:text-white">My Dashboard</h1>
         
         <div class="hidden lg:flex gap-2 sm:gap-3">
-          <button class="themeToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+          <button class="themeToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
             <i class="themeIcon bi bi-moon-fill"></i>
           </button>
-          <button class="rtlToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+          <button class="rtlToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
             <i class="bi bi-arrow-left-right"></i>
           </button>
         </div>
@@ -91,166 +100,387 @@
         </button>
       </header>
 
-      <main class="p-2 sm:p-4 md:p-6 space-y-6 overflow-y-auto">
+      <main class="p-4 sm:p-6 md:p-8 space-y-6 overflow-y-auto">
 
-        <div class="bg-gradient-to-r from-[#EC4899] to-[#b9799d] text-white p-4 sm:p-6 rounded-2xl shadow-lg">
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Welcome back, Jane! <i class="bi bi-cake2"></i></h2>
-          <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Track your orders, upload custom designs, and manage your delivery schedules.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-gift-fill text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">12</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Past Orders</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-clock-history text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">2</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Active Orders</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-stars text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">450</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Reward Points</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-images text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">3</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1"> Designs</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition flex justify-center items-center gap-2"><i class="bi bi-cloud-upload"></i> Upload Design</button>
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition flex justify-center items-center gap-2"><i class="bi bi-plus-circle"></i> New Custom Request</button>
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition flex justify-center items-center gap-2"><i class="bi bi-truck"></i> Track Order</button>
-        </div>
-
-        <div class="space-y-3 md:space-y-0 md:overflow-x-auto">
-          <h2 class="text-lg sm:text-xl font-bold mb-2 text-[#EC4899] dark:text-white">Your Recent Orders</h2>
-          <div class="md:table w-full hidden md:block">
-            <table class="w-full min-w-[600px] text-left dark:text-white">
-              <thead class="bg-[#EC489920]">
-                <tr>
-                  <th class="py-2 px-3 sm:px-4">Order ID</th>
-                  <th class="py-2 px-3 sm:px-4">Item</th>
-                  <th class="py-2 px-3 sm:px-4">Delivery Date</th>
-                  <th class="py-2 px-3 sm:px-4">Type</th>
-                  <th class="py-2 px-3 sm:px-4">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#ORD-089</td>
-                  <td class="py-2 px-3 sm:px-4">Custom Unicorn Cake</td>
-                  <td class="py-2 px-3 sm:px-4">Oct 24, 2023</td>
-                  <td class="py-2 px-3 sm:px-4"><span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">Custom</span></td>
-                  <td class="py-2 px-3 sm:px-4 text-green-500 font-semibold">Delivered</td>
-                </tr>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#ORD-102</td>
-                  <td class="py-2 px-3 sm:px-4">Classic Red Velvet (2kg)</td>
-                  <td class="py-2 px-3 sm:px-4">Mar 14, 2026</td>
-                  <td class="py-2 px-3 sm:px-4"><span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Standard</span></td>
-                  <td class="py-2 px-3 sm:px-4 text-yellow-500 font-semibold">Baking</td>
-                </tr>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#ORD-105</td>
-                  <td class="py-2 px-3 sm:px-4">Anniversary Tier Cake</td>
-                  <td class="py-2 px-3 sm:px-4">Mar 18, 2026</td>
-                  <td class="py-2 px-3 sm:px-4"><span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">Custom</span></td>
-                  <td class="py-2 px-3 sm:px-4 text-blue-500 font-semibold">Reviewing Design</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="md:hidden space-y-2">
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <div class="flex justify-between items-start">
-                <p><span class="font-semibold text-gray-500 dark:text-gray-400">#ORD-089</span></p>
-                <span class="bg-purple-100 text-purple-700 text-[10px] px-2 py-1 rounded-full font-semibold">Custom</span>
-              </div>
-              <p class="font-bold text-lg mt-1">Custom Unicorn Cake</p>
-              <p class="text-sm mt-1"><i class="bi bi-calendar-event mr-1"></i> Oct 24, 2023</p>
-              <p class="mt-2"><span class="text-green-500 font-semibold"><i class="bi bi-check-circle mr-1"></i> Delivered</span></p>
+        <div id="section-dashboard" class="content-section space-y-6">
+          <div class="bg-gradient-to-r from-[#EC4899] to-[#b9799d] text-white p-6 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div class="relative z-10">
+              <h2 class="text-2xl md:text-3xl font-bold">Welcome back, Jane! <i class="bi bi-cake2 ml-2"></i></h2>
+              <p class="mt-2 text-sm md:text-base opacity-90 max-w-lg">Track your orders, upload custom designs, and manage your delivery schedules all in one sweet place.</p>
             </div>
-            
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <div class="flex justify-between items-start">
-                <p><span class="font-semibold text-gray-500 dark:text-gray-400">#ORD-102</span></p>
-                <span class="bg-blue-100 text-blue-700 text-[10px] px-2 py-1 rounded-full font-semibold">Standard</span>
-              </div>
-              <p class="font-bold text-lg mt-1">Classic Red Velvet (2kg)</p>
-              <p class="text-sm mt-1"><i class="bi bi-calendar-event mr-1"></i> Mar 14, 2026</p>
-              <p class="mt-2"><span class="text-yellow-500 font-semibold"><i class="bi bi-egg-fried mr-1"></i> Baking</span></p>
-            </div>
-            
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <div class="flex justify-between items-start">
-                <p><span class="font-semibold text-gray-500 dark:text-gray-400">#ORD-105</span></p>
-                <span class="bg-purple-100 text-purple-700 text-[10px] px-2 py-1 rounded-full font-semibold">Custom</span>
-              </div>
-              <p class="font-bold text-lg mt-1">Anniversary Tier Cake</p>
-              <p class="text-sm mt-1"><i class="bi bi-calendar-event mr-1"></i> Mar 18, 2026</p>
-              <p class="mt-2"><span class="text-blue-500 font-semibold"><i class="bi bi-search mr-1"></i> Reviewing Design</span></p>
-            </div>
+            <i class="bi bi-stars absolute -right-4 -bottom-4 text-9xl opacity-10"></i>
           </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <div class="bg-white dark:bg-[#1a1a2e] p-4 sm:p-6 rounded-2xl shadow-lg space-y-3">
-            <h2 class="text-lg sm:text-xl font-bold text-[#EC4899] dark:text-white">Your Favorite Flavors</h2>
-            <div class="space-y-4">
-              <div>
-                <p class="flex justify-between text-xs sm:text-sm dark:text-white font-medium mb-1">Chocolate Truffle <span>5 Orders</span></p>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                  <div class="bg-[#EC4899] h-2 rounded" style="width:70%"></div>
-                </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-full mb-2">
+                <i class="bi bi-gift-fill text-3xl text-[#EC4899]"></i>
               </div>
-              <div>
-                <p class="flex justify-between text-xs sm:text-sm dark:text-white font-medium mb-1">Red Velvet <span>3 Orders</span></p>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                  <div class="bg-[#EC4899] h-2 rounded" style="width:40%"></div>
-                </div>
+              <h2 class="text-3xl font-bold text-[#EC4899] dark:text-white mt-1">12</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Past Orders</p>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-full mb-2">
+                <i class="bi bi-clock-history text-3xl text-[#EC4899]"></i>
               </div>
-              <div>
-                <p class="flex justify-between text-xs sm:text-sm dark:text-white font-medium mb-1">Mango Delight <span>1 Order</span></p>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                  <div class="bg-[#EC4899] h-2 rounded" style="width:15%"></div>
-                </div>
+              <h2 class="text-3xl font-bold text-[#EC4899] dark:text-white mt-1">2</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Active Orders</p>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-full mb-2">
+                <i class="bi bi-stars text-3xl text-[#EC4899]"></i>
               </div>
+              <h2 class="text-3xl font-bold text-[#EC4899] dark:text-white mt-1">450</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Reward Points</p>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-full mb-2">
+                <i class="bi bi-images text-3xl text-[#EC4899]"></i>
+              </div>
+              <h2 class="text-3xl font-bold text-[#EC4899] dark:text-white mt-1">3</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Saved Designs</p>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#1a1a2e] p-4 sm:p-6 rounded-2xl shadow-lg">
-            <div class="flex justify-between items-center mb-4">
-              <h2 class="text-lg sm:text-xl font-bold text-[#EC4899] dark:text-white">Upcoming Deliveries</h2>
-              <button class="text-sm text-[#EC4899] hover:underline">Manage</button>
-            </div>
-            <ul class="space-y-3 dark:text-white">
-              <li class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition border border-gray-100 dark:border-gray-800">
-                <div class="bg-[#f3dde9] text-[#EC4899] p-3 rounded-lg text-center min-w-[60px]">
-                  <p class="text-xs font-bold uppercase">Mar</p>
-                  <p class="text-lg font-bold">14</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+              <h3 class="font-bold text-[#EC4899] dark:text-white mb-4">Your Favorite Flavors</h3>
+              <div class="space-y-5">
+                <div>
+                  <div class="flex justify-between text-sm font-semibold dark:text-white mb-2">
+                    <span>Chocolate Truffle</span>
+                    <span class="text-gray-500">5 Orders</span>
+                  </div>
+                  <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                    <div class="bg-[#EC4899] h-2 rounded-full w-[70%]"></div>
+                  </div>
                 </div>
                 <div>
-                  <p class="font-semibold text-sm sm:text-base">Classic Red Velvet (2kg)</p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">Delivery Slot: 4:00 PM - 6:00 PM</p>
-                </div>
-              </li>
-              <li class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition border border-gray-100 dark:border-gray-800">
-                <div class="bg-[#f3dde9] text-[#EC4899] p-3 rounded-lg text-center min-w-[60px]">
-                  <p class="text-xs font-bold uppercase">Mar</p>
-                  <p class="text-lg font-bold">18</p>
+                  <div class="flex justify-between text-sm font-semibold dark:text-white mb-2">
+                    <span>Red Velvet</span>
+                    <span class="text-gray-500">3 Orders</span>
+                  </div>
+                  <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                    <div class="bg-[#EC4899] h-2 rounded-full w-[40%]"></div>
+                  </div>
                 </div>
                 <div>
-                  <p class="font-semibold text-sm sm:text-base">Anniversary Tier Cake</p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">Delivery Slot: 10:00 AM - 12:00 PM</p>
+                  <div class="flex justify-between text-sm font-semibold dark:text-white mb-2">
+                    <span>Mango Delight</span>
+                    <span class="text-gray-500">1 Order</span>
+                  </div>
+                  <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                    <div class="bg-[#EC4899] h-2 rounded-full w-[15%]"></div>
+                  </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col justify-center space-y-4">
+              <h3 class="font-bold text-[#EC4899] dark:text-white mb-2">Quick Actions</h3>
+              <button onclick="showSection('custom')" class="w-full bg-[#EC4899] text-white font-bold py-4 rounded-xl shadow-md hover:bg-[#d83b8a] transition flex justify-center items-center gap-2">
+                <i class="bi bi-cloud-upload text-xl"></i> Upload Custom Design
+              </button>
+              <button onclick="showSection('orders')" class="w-full border-2 border-[#EC4899] text-[#EC4899] dark:text-white dark:border-gray-600 font-bold py-4 rounded-xl hover:bg-pink-50 dark:hover:bg-gray-800 transition flex justify-center items-center gap-2">
+                <i class="bi bi-truck text-xl"></i> Track Current Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-orders" class="content-section hidden space-y-6">
+          <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Active Orders</h2>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="bg-yellow-100 text-yellow-700 text-xs px-3 py-1 rounded-full font-bold">Baking</span>
+                  <h3 class="font-bold text-lg dark:text-white mt-2">Classic Red Velvet (2kg)</h3>
+                  <p class="text-xs text-gray-500 mt-1">Order #ORD-102 • Standard</p>
+                </div>
+                <h3 class="font-bold text-[#EC4899] text-xl">$45.00</h3>
+              </div>
+              <div class="mt-6">
+                <div class="flex justify-between text-xs text-gray-500 mb-2 font-medium">
+                  <span class="text-[#EC4899]">Confirmed</span>
+                  <span class="text-[#EC4899]">Baking</span>
+                  <span>Out for Delivery</span>
+                </div>
+                <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-[#EC4899] h-2 rounded-full w-[50%]"></div>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-sm">
+                <span class="text-gray-500"><i class="bi bi-calendar-event mr-1"></i> Delivery: Mar 14, 2026</span>
+                <button class="text-[#EC4899] font-bold hover:underline">Track Delivery</button>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-bold">Reviewing Design</span>
+                  <h3 class="font-bold text-lg dark:text-white mt-2">Anniversary Tier Cake</h3>
+                  <p class="text-xs text-gray-500 mt-1">Order #ORD-105 • Custom Design</p>
+                </div>
+                <h3 class="font-bold text-[#EC4899] text-xl">$120.00</h3>
+              </div>
+              <div class="mt-6">
+                <div class="flex justify-between text-xs text-gray-500 mb-2 font-medium">
+                  <span class="text-[#EC4899]">Submitted</span>
+                  <span>Reviewing</span>
+                  <span>Confirmed</span>
+                </div>
+                <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-[#EC4899] h-2 rounded-full w-[25%]"></div>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-sm">
+                <span class="text-gray-500"><i class="bi bi-calendar-event mr-1"></i> Delivery: Mar 18, 2026</span>
+                <button class="text-[#EC4899] font-bold hover:underline">View Sketch</button>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white mt-8 mb-4">Order History</h2>
+          <div>
+  <div class="hidden md:block bg-white dark:bg-[#1a1a2e] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5">
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-max text-left dark:text-white text-sm">
+        <thead class="bg-gray-50 dark:bg-gray-900/50">
+          <tr class="text-gray-500 font-semibold uppercase text-xs">
+            <th class="py-4 px-6">Order ID</th>
+            <th class="py-4 px-6">Item</th>
+            <th class="py-4 px-6">Date</th>
+            <th class="py-4 px-6">Price</th>
+            <th class="py-4 px-6">Status</th>
+            <th class="py-4 px-6">Action</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+          <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-600 dark:text-gray-300">#ORD-089</td>
+            <td class="py-4 px-6 font-semibold">Custom Unicorn Cake</td>
+            <td class="py-4 px-6 text-gray-500">Oct 24, 2023</td>
+            <td class="py-4 px-6 font-bold text-[#EC4899]">$85.00</td>
+            <td class="py-4 px-6"><span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Delivered</span></td>
+            <td class="py-4 px-6"><button class="text-[#EC4899] font-bold text-xs hover:underline flex items-center gap-1"><i class="bi bi-arrow-repeat"></i> Reorder</button></td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-600 dark:text-gray-300">#ORD-072</td>
+            <td class="py-4 px-6 font-semibold">Box of 6 Cupcakes</td>
+            <td class="py-4 px-6 text-gray-500">Aug 12, 2023</td>
+            <td class="py-4 px-6 font-bold text-[#EC4899]">$18.00</td>
+            <td class="py-4 px-6"><span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Delivered</span></td>
+            <td class="py-4 px-6"><button class="text-[#EC4899] font-bold text-xs hover:underline flex items-center gap-1"><i class="bi bi-arrow-repeat"></i> Reorder</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="md:hidden space-y-4">
+    <div class="bg-white dark:bg-[#1a1a2e] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col">
+      <div class="flex justify-between items-start mb-2">
+        <div>
+          <span class="text-xs font-bold text-gray-400">#ORD-089</span>
+          <h3 class="font-bold text-base dark:text-white mt-1">Custom Unicorn Cake</h3>
+        </div>
+        <span class="bg-green-100 text-green-700 text-[10px] px-2 py-1 rounded-full font-bold">Delivered</span>
+      </div>
+      <div class="flex justify-between items-end mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+        <div>
+          <p class="text-xs text-gray-500 mb-1"><i class="bi bi-calendar-event mr-1"></i> Oct 24, 2023</p>
+          <p class="font-black text-[#EC4899] text-lg">$85.00</p>
+        </div>
+        <button class="text-[#EC4899] bg-pink-50 dark:bg-pink-900/20 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1 hover:bg-[#EC4899] hover:text-white transition-colors">
+          <i class="bi bi-arrow-repeat text-sm"></i> Reorder
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-[#1a1a2e] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col">
+      <div class="flex justify-between items-start mb-2">
+        <div>
+          <span class="text-xs font-bold text-gray-400">#ORD-072</span>
+          <h3 class="font-bold text-base dark:text-white mt-1">Box of 6 Cupcakes</h3>
+        </div>
+        <span class="bg-green-100 text-green-700 text-[10px] px-2 py-1 rounded-full font-bold">Delivered</span>
+      </div>
+      <div class="flex justify-between items-end mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+        <div>
+          <p class="text-xs text-gray-500 mb-1"><i class="bi bi-calendar-event mr-1"></i> Aug 12, 2023</p>
+          <p class="font-black text-[#EC4899] text-lg">$18.00</p>
+        </div>
+        <button class="text-[#EC4899] bg-pink-50 dark:bg-pink-900/20 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1 hover:bg-[#EC4899] hover:text-white transition-colors">
+          <i class="bi bi-arrow-repeat text-sm"></i> Reorder
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+        <div id="section-custom" class="content-section hidden space-y-6">
+          <div class="bg-white dark:bg-[#1a1a2e] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white mb-2">Design Your Dream Cake</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">Upload an inspiration picture and tell us exactly what you want. Our master bakers will review it and provide a quote within 24 hours.</p>
+
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold dark:text-white mb-2">Occasion</label>
+                  <select class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]">
+                    <option>Birthday</option>
+                    <option>Wedding / Anniversary</option>
+                    <option>Baby Shower</option>
+                    <option>Other Event</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold dark:text-white mb-2">Preferred Base Flavor</label>
+                  <select class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]">
+                    <option>Chocolate Truffle</option>
+                    <option>Vanilla Sponge</option>
+                    <option>Red Velvet</option>
+                    <option>Black Forest</option>
+                    <option>Custom Mix</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold dark:text-white mb-2">Estimated Weight</label>
+                  <select class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]">
+                    <option>1 kg (approx 8-10 people)</option>
+                    <option>2 kg (approx 15-20 people)</option>
+                    <option>3 kg+ (Large Gathering)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold dark:text-white mb-2">Target Delivery Date</label>
+                  <input type="date" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold dark:text-white mb-2">Upload Inspiration Image (Optional)</label>
+                <div class="border-2 border-dashed border-[#EC489950] bg-pink-50/50 dark:bg-gray-900/50 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-pink-50 dark:hover:bg-gray-800 transition cursor-pointer">
+                  <i class="bi bi-cloud-arrow-up text-4xl text-[#EC4899] mb-3"></i>
+                  <p class="text-sm font-bold dark:text-white">Click to upload or drag and drop</p>
+                  <p class="text-xs text-gray-500 mt-1">SVG, PNG, JPG or GIF (MAX. 5MB)</p>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold dark:text-white mb-2">Special Instructions / Message on Cake</label>
+                <textarea rows="4" placeholder="E.g., 'Happy 10th Birthday Leo!', allergies, specific color codes..." class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]"></textarea>
+              </div>
+
+              <button type="button" class="w-full bg-[#EC4899] text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:bg-[#d83b8a] transition">
+                Submit Request for Quote
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="section-deliveries" class="content-section hidden space-y-6">
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Upcoming Deliveries</h2>
+            <button class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition">View Past</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border-l-4 border-[#EC4899]">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-pink-50 dark:bg-pink-900/20 text-[#EC4899] p-3 rounded-xl text-center min-w-[70px]">
+                  <p class="text-xs font-bold uppercase">Mar</p>
+                  <p class="text-2xl font-black">14</p>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg dark:text-white">Mom's Birthday Party</h3>
+                  <p class="text-sm text-gray-500">Classic Red Velvet (2kg)</p>
+                </div>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 text-sm dark:text-gray-300 space-y-2">
+                <p><i class="bi bi-clock text-[#EC4899] mr-2"></i> Slot: 4:00 PM - 6:00 PM</p>
+                <p><i class="bi bi-geo-alt text-[#EC4899] mr-2"></i> 123 Baker Street, Central City</p>
+              </div>
+              <div class="mt-4 flex gap-3">
+                <button class="flex-1 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 py-2 rounded-xl text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition">Reschedule</button>
+                <button class="flex-1 bg-[#EC4899] text-white py-2 rounded-xl text-sm font-semibold hover:bg-[#d83b8a] transition">Track Courier</button>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border-l-4 border-purple-500">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-purple-50 dark:bg-purple-900/20 text-purple-600 p-3 rounded-xl text-center min-w-[70px]">
+                  <p class="text-xs font-bold uppercase">Mar</p>
+                  <p class="text-2xl font-black">18</p>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg dark:text-white">Our 5th Anniversary</h3>
+                  <p class="text-sm text-gray-500">Custom Anniversary Tier Cake</p>
+                </div>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 text-sm dark:text-gray-300 space-y-2">
+                <p><i class="bi bi-clock text-purple-500 mr-2"></i> Slot: 10:00 AM - 12:00 PM</p>
+                <p><i class="bi bi-geo-alt text-purple-500 mr-2"></i> 456 Love Lane, Westside</p>
+              </div>
+              <div class="mt-4 flex gap-3">
+                <button class="flex-1 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 py-2 rounded-xl text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition">Change Address</button>
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-400 py-2 rounded-xl text-sm font-semibold cursor-not-allowed">Track (Not Shipped)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-addresses" class="content-section hidden space-y-6">
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Saved Addresses</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-[#EC4899]">
+              <div class="flex justify-between items-start mb-2">
+                <div class="flex items-center gap-2 text-[#EC4899] font-bold">
+                  <i class="bi bi-house-door-fill text-xl"></i> Home
+                </div>
+                <span class="bg-pink-100 text-[#EC4899] text-[10px] px-2 py-1 rounded-full font-bold uppercase">Default</span>
+              </div>
+              <p class="font-bold text-gray-800 dark:text-white mt-4">Jane Doe</p>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                123 Baker Street, Apt 4B<br>
+                Central City, CA 90210<br>
+                Phone: +1 (555) 123-4567
+              </p>
+              <div class="mt-6 flex gap-4 text-sm">
+                <button class="text-[#EC4899] font-semibold hover:underline">Edit</button>
+                <button class="text-gray-400 hover:text-red-500 font-semibold transition">Delete</button>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+              <div class="flex justify-between items-start mb-2">
+                <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-bold">
+                  <i class="bi bi-building-fill text-xl"></i> Office
+                </div>
+              </div>
+              <p class="font-bold text-gray-800 dark:text-white mt-4">Jane Doe (Marketing Dept)</p>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                450 Corporate Blvd, Suite 200<br>
+                Business District, CA 90215<br>
+                Phone: +1 (555) 987-6543
+              </p>
+              <div class="mt-6 flex gap-4 text-sm">
+                <button class="text-[#EC4899] font-semibold hover:underline">Edit</button>
+                <button class="text-gray-400 hover:text-red-500 font-semibold transition">Delete</button>
+              </div>
+            </div>
+
+            <button class="border-2 border-dashed border-[#EC489950] bg-pink-50/30 dark:bg-gray-900/50 rounded-3xl p-6 flex flex-col items-center justify-center text-[#EC4899] hover:bg-pink-50 dark:hover:bg-gray-800 transition min-h-[220px]">
+              <i class="bi bi-plus-circle-fill text-4xl mb-3"></i>
+              <span class="font-bold">Add New Address</span>
+            </button>
           </div>
         </div>
 
@@ -259,7 +489,47 @@
   </div>
 
   <script>
-    // Sidebar toggle
+    // --- SECTION SWITCHING LOGIC ---
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Show the selected section
+      document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+      // Update Page Title
+      const titles = {
+        'dashboard': 'My Dashboard',
+        'orders': 'My Orders',
+        'custom': 'Custom Cake Request',
+        'deliveries': 'Manage Delivery Dates',
+        'addresses': 'Saved Addresses'
+      };
+      document.getElementById('page-title').innerText = titles[sectionId];
+
+      // Reset all nav links to default state (white text, no bg)
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('bg-[#f3dde9]', 'text-[#EC4899]', 'font-semibold');
+        link.classList.add('text-white', 'hover:bg-[#f3dde9]', 'hover:text-[#EC4899]');
+      });
+
+      // Set active nav link (pink text, pink bg)
+      const activeLink = document.getElementById('nav-' + sectionId);
+      if (activeLink) {
+        activeLink.classList.remove('text-white', 'hover:bg-[#f3dde9]', 'hover:text-[#EC4899]');
+        activeLink.classList.add('bg-[#f3dde9]', 'text-[#EC4899]', 'font-semibold');
+      }
+
+      // Close sidebar on mobile after clicking
+      if (window.innerWidth < 1024) {
+        closeBtn.click();
+      }
+    }
+
+
+    // --- SIDEBAR TOGGLE LOGIC ---
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
     const openBtn = document.getElementById("openSidebar");
@@ -278,7 +548,7 @@
       overlay.classList.add("hidden");
     };
 
-    // Theme toggle (Handles both navbar and sidebar buttons)
+    // --- THEME TOGGLE LOGIC ---
     const themeBtns = document.querySelectorAll(".themeToggleBtn");
     const themeIcons = document.querySelectorAll(".themeIcon");
     
@@ -286,14 +556,13 @@
       btn.onclick = () => {
         document.documentElement.classList.toggle("dark");
         const isDark = document.documentElement.classList.contains("dark");
-        // Update all theme icons
         themeIcons.forEach(icon => {
           icon.className = isDark ? "themeIcon bi bi-sun-fill" : "themeIcon bi bi-moon-fill";
         });
       };
     });
 
-    // RTL toggle (Handles both navbar and sidebar buttons)
+    // --- RTL TOGGLE LOGIC ---
     const rtlBtns = document.querySelectorAll(".rtlToggleBtn");
     
     rtlBtns.forEach(btn => {
@@ -301,16 +570,6 @@
         document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
       };
     });
-   tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                    },
-                },
-            },
-        }
   </script>
 
 </body>

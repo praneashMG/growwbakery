@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Groww Cakes</title>
+  <title>Sign Up - Bake Hub</title>
   <link rel="icon" href="images/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,12 +17,12 @@
     }
 
     [data-theme="dark"] {
-      --home-bg: #0f0a1f;
+      --home-bg: #000000;
       --text-color: #fff;
     }
 
     [data-theme="dark"] .card {
-      background-color: #111;
+       background-color: rgb(48, 48, 48);
     }
 [data-theme="dark"] .title {
       color: white;
@@ -45,12 +45,12 @@
 <body class="font-sans">
 
   <!-- NAVBAR (SAME AS LOGIN) -->
-  <nav class="w-full bg-[#EC4899] text-white shadow-md">
+  <nav class="card w-full bg-[#EC4899] text-white shadow-md">
         <div class="max-w-4xl mx-auto px-6 flex items-center justify-between h-16">
 
             <h1 class="text-2xl font-bold">
                 <a href="index.html">
-                    Groww Cakes
+                    Bake Hub
                 </a>
             </h1>
 
@@ -68,12 +68,12 @@
   <!-- MAIN -->
   <div class="flex justify-center items-center min-h-screen px-4 pt-8 mt-[-50px]">
 
-    <div class="card flex flex-col lg:flex-row bg-white rounded-2xl shadow-xl 
-            overflow-hidden w-full max-w-4xl border border-white">
+    <div class="flex flex-col lg:flex-row bg-white shadow-xl 
+            overflow-hidden w-full max-w-4xl rounded-2xl">
 
       <!-- LEFT MARKETING -->
       <div class="card1 lg:w-1/2 flex flex-col justify-between p-10 
-            bg-gradient-to-br from-[#EC4899] to-[#B9799D] text-white rounded-3xl shadow-lg">
+            bg-gradient-to-br from-[#EC4899] to-[#B9799D] text-white shadow-lg">
 
     <div>
       <h1 class="text-3xl font-bold mb-3">
@@ -100,7 +100,7 @@
 </div>
 
       <!-- RIGHT SIGN UP -->
-      <div class="card lg:w-1/2 p-10 flex flex-col justify-center bg-white rounded-3xl shadow-lg">
+      <div class="card lg:w-1/2 p-10 flex flex-col justify-center bg-white shadow-lg">
 
     <div class="max-w-md mx-auto w-full">
 
@@ -120,10 +120,13 @@
 
         <input type="email" placeholder="Email Address"
           class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
-
+        
+        <div class="flex gap-4">
         <input type="password" placeholder="Password"
           class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
-
+        <input type="password" placeholder="Confirm Password"
+          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+</div>
         <div class="flex items-center gap-2 text-sm">
           <input type="checkbox" id="terms" class="accent-[#EC4899]" required>
           <label for="terms">I agree to Terms & Conditions</label>
@@ -148,19 +151,19 @@
 
         <!-- Google -->
         <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300">
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
           <i class="bi bi-google text-lg"></i>
         </button>
 
         <!-- Facebook -->
         <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300">
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
           <i class="bi bi-facebook text-lg"></i>
         </button>
 
         <!-- Apple -->
         <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300">
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
           <i class="bi bi-apple text-lg"></i>
         </button>
 

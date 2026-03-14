@@ -4,16 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Groww Cakes</title>
+  <title>Admin - Bake Hub</title>
   <link rel="icon" href="images/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script>
-    tailwind.config = { darkMode: 'class' }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
   </script>
-
 </head>
 
 <body class="bg-gray-100 dark:bg-[#0f0a1f] transition-colors duration-300 font-sans">
@@ -27,7 +34,7 @@
 
       <div class="p-6 text-2xl font-bold flex justify-between items-center">
         <h1 class="text-2xl font-bold text-white">
-          <a href="index.html">Groww Cakes</a>
+          <a href="index.html">Bake Hub</a>
         </h1>
         <button id="closeSidebar" class="lg:hidden text-xl">
           <i class="bi bi-x-lg"></i>
@@ -35,37 +42,45 @@
       </div>
 
       <nav class="flex-1 p-4 space-y-2 text-sm overflow-y-auto">
-        <a class="block px-4 py-3 rounded-xl bg-[#f3dde9] text-[#EC4899] font-semibold cursor-pointer">
+        <a id="nav-dashboard" onclick="showSection('dashboard')"
+          class="nav-link block px-4 py-3 rounded-xl bg-[#f3dde9] text-[#EC4899] font-semibold cursor-pointer transition">
           <i class="bi bi-speedometer2 mr-2"></i> Dashboard
         </a>
-        <a class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-orders" onclick="showSection('orders')"
+          class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-basket-fill mr-2"></i> Orders
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-designs" onclick="showSection('designs')"
+          class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-upload mr-2"></i> Upload Designs
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-deliveries" onclick="showSection('deliveries')"
+          class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-clock-fill mr-2"></i> Track Deliveries
         </a>
-        <a class="block px-4 py-3 rounded-xl  hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer">
+        <a id="nav-special" onclick="showSection('special')"
+          class="nav-link block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition cursor-pointer text-white">
           <i class="bi bi-star-fill mr-2"></i> Special Orders
         </a>
-        <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition">
+        <a href="login.html"
+          class="block px-4 py-3 rounded-xl hover:bg-[#f3dde9] hover:text-[#EC4899] transition text-white mt-8">
           <i class="bi bi-box-arrow-left mr-2"></i> Logout
         </a>
       </nav>
 
       <div class="lg:hidden p-4 border-t border-[#4B008220] flex gap-2 justify-center">
-        <button class="themeToggleBtn flex-1 px-3 py-2 rounded-lg border border-white/40 text-white hover:bg-white/10 transition flex justify-center items-center gap-2">
+        <button
+          class="themeToggleBtn flex-1 px-3 py-2 rounded-lg border border-white/40 text-white hover:bg-white/10 transition flex justify-center items-center gap-2">
           <i class="themeIcon bi bi-moon-fill"></i> Theme
         </button>
-        <button class="rtlToggleBtn flex-1 px-3 py-2 rounded-lg border border-white/40 text-white hover:bg-white/10 transition flex justify-center items-center gap-2">
+        <button
+          class="rtlToggleBtn flex-1 px-3 py-2 rounded-lg border border-white/40 text-white hover:bg-white/10 transition flex justify-center items-center gap-2">
           <i class="bi bi-arrow-left-right"></i> RTL
         </button>
       </div>
 
       <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
-        <img src="images/team3.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]" alt="Profile">
+        <img src="images/team3.avif" class="w-12 h-12 rounded-full border-2 border-white/50 object-cover" alt="Profile">
         <div>
           <p class="font-semibold text-sm ">Admin User</p>
           <p class="text-xs ">Super Admin</p>
@@ -74,17 +89,18 @@
 
     </aside>
 
-    <div class="flex-1 flex flex-col">
+    <div class="flex-1 flex flex-col overflow-hidden">
 
-      <header class="bg-white dark:bg-[#1a1a2e] shadow px-4 sm:px-6 py-3 flex justify-between items-center">
+      <header class="bg-white dark:bg-[#1a1a2e] shadow px-4 sm:px-6 py-3 flex justify-between items-center z-10">
+        <h1 id="page-title" class="text-xl font-bold text-[#EC4899] dark:text-white">Admin Dashboard</h1>
 
-        <h1 class="text-xl font-bold text-[#EC4899] dark:text-white">Admin Dashboard</h1>
-        
         <div class="hidden lg:flex gap-2 sm:gap-3">
-          <button class="themeToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+          <button
+            class="themeToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
             <i class="themeIcon bi bi-moon-fill"></i>
           </button>
-          <button class="rtlToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+          <button
+            class="rtlToggleBtn px-2 sm:px-3 py-1 sm:py-2 rounded-lg border text-[#EC4899] dark:text-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
             <i class="bi bi-arrow-left-right"></i>
           </button>
         </div>
@@ -93,137 +109,477 @@
         </button>
       </header>
 
-      <main class="p-2 sm:p-4 md:p-6 space-y-6 overflow-y-auto">
+      <main class="p-2 sm:p-4 md:p-6 space-y-6 overflow-y-auto custom-scrollbar h-full">
 
-        <div class="bg-gradient-to-r from-[#EC4899] to-[#b9799d] text-white p-4 sm:p-6 rounded-2xl shadow-lg">
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Sweet Treats Dashboard</h2>
-          <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Manage Orders • Upload Designs • Track Deliveries • Special Cakes</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-basket-fill text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">320</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Total Orders</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-clock-fill text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">24</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Active Orders</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-truck text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">90%</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Delivery</p>
-          </div>
-          <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center">
-            <i class="bi bi-star-fill text-2xl sm:text-3xl md:text-4xl text-[#EC4899]"></i>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">45</h2>
-            <p class="text-xs sm:text-sm md:text-base dark:text-white mt-1">Special Orders</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition">Place New Order</button>
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition">Upload Cake Design</button>
-          <button class="w-full bg-[#EC4899] text-white font-semibold py-2 sm:py-3 md:py-4 rounded-2xl shadow-lg hover:bg-[#b9799d] transition">Track Orders</button>
-        </div>
-
-        <div class="space-y-3 md:space-y-0 md:overflow-x-auto">
-          <h2 class="text-lg sm:text-xl font-bold mb-2 text-[#EC4899] dark:text-white">Recent Orders</h2>
-          <div class="md:table w-full hidden md:block">
-            <table class="w-full min-w-[600px] text-left dark:text-white">
-              <thead class="bg-[#EC489920]">
-                <tr>
-                  <th class="py-2 px-3 sm:px-4">Order ID</th>
-                  <th class="py-2 px-3 sm:px-4">Customer</th>
-                  <th class="py-2 px-3 sm:px-4">Cake Type</th>
-                  <th class="py-2 px-3 sm:px-4">Quantity</th>
-                  <th class="py-2 px-3 sm:px-4">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#001</td>
-                  <td class="py-2 px-3 sm:px-4">Alice</td>
-                  <td class="py-2 px-3 sm:px-4">Chocolate</td>
-                  <td class="py-2 px-3 sm:px-4">2</td>
-                  <td class="py-2 px-3 sm:px-4 text-green-500 font-semibold">Delivered</td>
-                </tr>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#002</td>
-                  <td class="py-2 px-3 sm:px-4">Bob</td>
-                  <td class="py-2 px-3 sm:px-4">Red Velvet</td>
-                  <td class="py-2 px-3 sm:px-4">1</td>
-                  <td class="py-2 px-3 sm:px-4 text-yellow-500 font-semibold">Preparing</td>
-                </tr>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 px-3 sm:px-4">#003</td>
-                  <td class="py-2 px-3 sm:px-4">Carol</td>
-                  <td class="py-2 px-3 sm:px-4">Vanilla</td>
-                  <td class="py-2 px-3 sm:px-4">3</td>
-                  <td class="py-2 px-3 sm:px-4 text-pink-500 font-semibold">On Delivery</td>
-                </tr>
-              </tbody>
-            </table>
+        <div id="section-dashboard" class="content-section space-y-6">
+          <div class="bg-gradient-to-r from-[#EC4899] to-[#b9799d] text-white p-4 sm:p-6 rounded-2xl shadow-lg">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Sweet Treats Dashboard</h2>
+            <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Manage Orders • Upload Designs • Track Deliveries •
+              Special Cakes</p>
           </div>
 
-          <div class="md:hidden space-y-2">
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <p><span class="font-semibold">Order:</span> #001</p>
-              <p><span class="font-semibold">Customer:</span> Alice</p>
-              <p><span class="font-semibold">Cake:</span> Chocolate</p>
-              <p><span class="font-semibold">Qty:</span> 2</p>
-              <p><span class="font-semibold">Status:</span> <span class="text-green-500 font-semibold">Delivered</span></p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <i class="bi bi-basket-fill text-3xl md:text-4xl text-[#EC4899]"></i>
+              <h2 class="text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">320</h2>
+              <p class="text-sm dark:text-white mt-1 text-gray-500 font-medium">Total Orders</p>
             </div>
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <p><span class="font-semibold">Order:</span> #002</p>
-              <p><span class="font-semibold">Customer:</span> Bob</p>
-              <p><span class="font-semibold">Cake:</span> Red Velvet</p>
-              <p><span class="font-semibold">Qty:</span> 1</p>
-              <p><span class="font-semibold">Status:</span> <span class="text-yellow-500 font-semibold">Preparing</span></p>
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <i class="bi bi-clock-fill text-3xl md:text-4xl text-[#EC4899]"></i>
+              <h2 class="text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">24</h2>
+              <p class="text-sm dark:text-white mt-1 text-gray-500 font-medium">Active Orders</p>
             </div>
-            <div class="bg-white dark:bg-[#1a1a2e] dark:text-white p-3 rounded-2xl shadow flex flex-col">
-              <p><span class="font-semibold">Order:</span> #003</p>
-              <p><span class="font-semibold">Customer:</span> Carol</p>
-              <p><span class="font-semibold">Cake:</span> Vanilla</p>
-              <p><span class="font-semibold">Qty:</span> 3</p>
-              <p><span class="font-semibold">Status:</span> <span class="text-pink-500 font-semibold">On Delivery</span></p>
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <i class="bi bi-truck text-3xl md:text-4xl text-[#EC4899]"></i>
+              <h2 class="text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">90%</h2>
+              <p class="text-sm dark:text-white mt-1 text-gray-500 font-medium">Delivery Rate</p>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col items-center">
+              <i class="bi bi-star-fill text-3xl md:text-4xl text-[#EC4899]"></i>
+              <h2 class="text-2xl md:text-3xl font-bold text-[#EC4899] mt-2">45</h2>
+              <p class="text-sm dark:text-white mt-1 text-gray-500 font-medium">Special Orders</p>
             </div>
           </div>
-        </div>
 
-        <div class="bg-white dark:bg-[#1a1a2e] p-4 sm:p-6 rounded-2xl shadow-lg space-y-3">
-          <h2 class="text-lg sm:text-xl font-bold text-[#EC4899] dark:text-white">Cake Type Popularity</h2>
-          <div class="space-y-2">
-            <div>
-              <p class="flex justify-between text-xs sm:text-sm dark:text-white">Chocolate <span>85%</span></p>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                <div class="bg-[#EC4899] h-2 rounded" style="width:85%"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-3">
+              <div class="flex justify-between items-center mb-2">
+                <h2 class="text-lg font-bold text-[#EC4899] dark:text-white">Recent Orders Overview</h2>
+                <button onclick="showSection('orders')" class="text-sm text-[#EC4899] hover:underline font-medium">View
+                  All</button>
+              </div>
+
+              <div
+                class="hidden md:block bg-white dark:bg-[#1a1a2e] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5">
+                <div class="overflow-x-auto">
+                  <table class="w-full min-w-max text-left dark:text-white text-sm">
+                    <thead class="bg-[#EC489910] dark:bg-gray-900/50 text-[#EC4899] dark:text-pink-400">
+                      <tr>
+                        <th class="py-3 px-4 font-semibold">Order ID</th>
+                        <th class="py-3 px-4 font-semibold">Customer</th>
+                        <th class="py-3 px-4 font-semibold">Cake Type</th>
+                        <th class="py-3 px-4 font-semibold">Qty</th>
+                        <th class="py-3 px-4 font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                      <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <td class="py-3 px-4 font-medium text-gray-700 dark:text-gray-300">#ORD-001</td>
+                        <td class="py-3 px-4">Alice Smith</td>
+                        <td class="py-3 px-4">Chocolate Truffle</td>
+                        <td class="py-3 px-4">2</td>
+                        <td class="py-3 px-4"><span
+                            class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Delivered</span>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <td class="py-3 px-4 font-medium text-gray-700 dark:text-gray-300">#ORD-002</td>
+                        <td class="py-3 px-4">Bob Johnson</td>
+                        <td class="py-3 px-4">Red Velvet</td>
+                        <td class="py-3 px-4">1</td>
+                        <td class="py-3 px-4"><span
+                            class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full font-bold">Preparing</span>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <td class="py-3 px-4 font-medium text-gray-700 dark:text-gray-300">#ORD-003</td>
+                        <td class="py-3 px-4">Carol Williams</td>
+                        <td class="py-3 px-4">Vanilla Bean</td>
+                        <td class="py-3 px-4">3</td>
+                        <td class="py-3 px-4"><span
+                            class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full font-bold">On
+                            Delivery</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="md:hidden space-y-3">
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] dark:text-white p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-bold text-gray-400">#ORD-001 • Alice Smith</span>
+                    <span
+                      class="bg-green-100 text-green-700 text-[10px] px-2 py-1 rounded-full font-bold">Delivered</span>
+                  </div>
+                  <p class="font-bold text-base mt-1">Chocolate Truffle (Qty: 2)</p>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] dark:text-white p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-bold text-gray-400">#ORD-002 • Bob Johnson</span>
+                    <span
+                      class="bg-yellow-100 text-yellow-700 text-[10px] px-2 py-1 rounded-full font-bold">Preparing</span>
+                  </div>
+                  <p class="font-bold text-base mt-1">Red Velvet (Qty: 1)</p>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] dark:text-white p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex flex-col">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-bold text-gray-400">#ORD-003 • Carol Williams</span>
+                    <span class="bg-blue-100 text-blue-700 text-[10px] px-2 py-1 rounded-full font-bold">On
+                      Delivery</span>
+                  </div>
+                  <p class="font-bold text-base mt-1">Vanilla Bean (Qty: 3)</p>
+                </div>
               </div>
             </div>
-            <div>
-              <p class="flex justify-between text-xs sm:text-sm dark:text-white">Vanilla <span>78%</span></p>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                <div class="bg-[#EC4899] h-2 rounded" style="width:78%"></div>
+
+            <div class="space-y-6">
+              <div
+                class="bg-white dark:bg-[#1a1a2e] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                <h2 class="text-lg font-bold text-[#EC4899] dark:text-white mb-4">Flavor Popularity</h2>
+                <div class="space-y-4">
+                  <div>
+                    <p
+                      class="flex justify-between text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
+                      Chocolate <span>85%</span></p>
+                    <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div class="bg-[#EC4899] h-2 rounded-full" style="width:85%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p
+                      class="flex justify-between text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
+                      Vanilla <span>78%</span></p>
+                    <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div class="bg-[#b9799d] h-2 rounded-full" style="width:78%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p
+                      class="flex justify-between text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
+                      Red Velvet <span>88%</span></p>
+                    <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div class="bg-red-500 h-2 rounded-full" style="width:88%"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <p class="flex justify-between text-xs sm:text-sm dark:text-white">Red Velvet <span>88%</span></p>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded">
-                <div class="bg-[#EC4899] h-2 rounded" style="width:88%"></div>
+
+              <div
+                class="bg-[#EC4899] text-white p-5 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center">
+                <i class="bi bi-bell-fill text-3xl mb-2"></i>
+                <h3 class="font-bold text-lg">3 Alerts</h3>
+                <p class="text-sm mt-1 opacity-90">Low inventory on Vanilla Extract. 2 Custom orders pending review.</p>
+                <button onclick="showSection('special')"
+                  class="mt-4 bg-white text-[#EC4899] font-bold py-2 px-4 rounded-xl text-sm hover:scale-105 transition">Review
+                  Now</button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-[#1a1a2e] p-3 sm:p-6 rounded-2xl shadow-lg">
-          <h2 class="text-lg sm:text-xl font-bold mb-2 text-[#EC4899] dark:text-white">Upcoming Deliveries</h2>
-          <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm dark:text-white">
-            <li>March 12 - Chocolate Cake for Alice</li>
-            <li>March 13 - Vanilla Cake for Bob</li>
-            <li>March 14 - Red Velvet Cake for Carol</li>
-          </ul>
+        <div id="section-orders" class="content-section hidden space-y-6">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Order Management</h2>
+              <p class="text-sm text-gray-500 mt-1">View, filter, and manage all incoming and outgoing bakery orders.
+              </p>
+            </div>
+            <div class="flex gap-2 w-full md:w-auto">
+              <input type="text" placeholder="Search Order ID or Name..."
+                class="w-full md:w-64 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-[#1a1a2e] text-sm focus:outline-none focus:border-[#EC4899] dark:text-white">
+              <button
+                class="bg-[#EC4899] text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md hover:bg-[#d83b8a] transition-all"><i
+                  class="bi bi-funnel-fill"></i></button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-[#1a1a2e] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5">
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-max text-left dark:text-white text-sm">
+                <thead class="bg-gray-50 dark:bg-gray-900/50">
+                  <tr class="text-gray-500 font-semibold uppercase text-xs border-b dark:border-gray-800">
+                    <th class="py-4 px-6">Order ID</th>
+                    <th class="py-4 px-6">Customer Details</th>
+                    <th class="py-4 px-6">Item Ordered</th>
+                    <th class="py-4 px-6">Amount</th>
+                    <th class="py-4 px-6">Status</th>
+                    <th class="py-4 px-6 text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5">
+                    <td class="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">#ORD-1045</td>
+                    <td class="py-4 px-6">
+                      <p class="font-semibold">Michael Scott</p>
+                      <p class="text-[10px] text-gray-500">michael@email.com</p>
+                    </td>
+                    <td class="py-4 px-6">Pineapple Delight (1.5kg)</td>
+                    <td class="py-4 px-6 font-bold">$35.00</td>
+                    <td class="py-4 px-6"><span
+                        class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full font-bold">Baking</span>
+                    </td>
+                    <td class="py-4 px-6 text-center">
+                      <button class="text-[#EC4899] hover:text-[#d83b8a] p-1"><i
+                          class="bi bi-pencil-square"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5">
+                    <td class="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">#ORD-1044</td>
+                    <td class="py-4 px-6">
+                      <p class="font-semibold">Sarah Connor</p>
+                      <p class="text-[10px] text-gray-500">sarah@email.com</p>
+                    </td>
+                    <td class="py-4 px-6">Custom Robot Cake</td>
+                    <td class="py-4 px-6 font-bold">$120.00</td>
+                    <td class="py-4 px-6"><span
+                        class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full font-bold">In Transit</span>
+                    </td>
+                    <td class="py-4 px-6 text-center">
+                      <button class="text-[#EC4899] hover:text-[#d83b8a] p-1"><i
+                          class="bi bi-pencil-square"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5">
+                    <td class="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">#ORD-1043</td>
+                    <td class="py-4 px-6">
+                      <p class="font-semibold">John Wick</p>
+                      <p class="text-[10px] text-gray-500">john@email.com</p>
+                    </td>
+                    <td class="py-4 px-6">Black Forest (500g)</td>
+                    <td class="py-4 px-6 font-bold">$18.00</td>
+                    <td class="py-4 px-6"><span
+                        class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Delivered</span>
+                    </td>
+                    <td class="py-4 px-6 text-center">
+                      <button class="text-[#EC4899] hover:text-[#d83b8a] p-1"><i
+                          class="bi bi-pencil-square"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-designs" class="content-section hidden space-y-6">
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Design Management</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+              <h3 class="font-bold text-lg dark:text-white mb-2">Upload New Catalog Design</h3>
+              <p class="text-sm text-gray-500 mb-6">Add new cake designs to the public store catalog for customers to
+                select.</p>
+
+              <div
+                class="border-2 border-dashed border-[#EC489950] bg-pink-50/50 dark:bg-gray-900/50 rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-pink-50 dark:hover:bg-gray-800 transition">
+                <i class="bi bi-cloud-arrow-up text-4xl text-[#EC4899] mb-3"></i>
+                <p class="text-sm font-bold dark:text-white">Click to upload image</p>
+                <p class="text-xs text-gray-500 mt-1">High-Res JPG or PNG</p>
+              </div>
+
+              <div class="mt-4 space-y-4">
+                <input type="text" placeholder="Design Name (e.g., Floral Spring)"
+                  class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899] dark:text-white">
+                <select
+                  class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#EC4899]">
+                  <option>Select Category</option>
+                  <option>Wedding</option>
+                  <option>Birthday Kids</option>
+                  <option>Anniversary</option>
+                </select>
+                <button
+                  class="w-full bg-[#EC4899] text-white font-bold py-3 rounded-xl hover:bg-[#d83b8a] transition">Publish
+                  to Catalog</button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white dark:bg-[#1a1a2e] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 overflow-y-auto max-h-[600px]">
+              <h3 class="font-bold text-lg dark:text-white mb-4">Customer Custom Uploads</h3>
+              <div class="space-y-4">
+
+                <div class="flex gap-4 p-4 border border-gray-100 dark:border-gray-800 rounded-2xl items-center">
+                  <div class="w-20 h-20 bg-gray-200 dark:bg-gray-800 rounded-lg shrink-0">
+                    <img src="images/cakes1.webp"
+                      alt="Spiderman Cake Idea" class="w-full h-full object-cover rounded-lg">
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-xs text-gray-500">Req: #CUST-992</p>
+                    <p class="font-bold dark:text-white text-sm">Spiderman Theme</p>
+                    <p class="text-xs text-gray-500 mt-1">By: Alice Smith</p>
+                    <div class="flex gap-2 mt-2">
+                      <button
+                        class="bg-green-100 text-green-700 px-3 py-1 rounded text-[10px] font-bold hover:bg-green-200">Approve</button>
+                      <button
+                        class="bg-red-100 text-red-700 px-3 py-1 rounded text-[10px] font-bold hover:bg-red-200">Reject</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 p-4 border border-gray-100 dark:border-gray-800 rounded-2xl items-center">
+                  <div class="w-20 h-20 bg-gray-200 dark:bg-gray-800 rounded-lg shrink-0">
+                    <img
+                      src="images/cakes2.jpg"
+                      alt="Gold Foil Cake Idea" class="w-full h-full object-cover rounded-lg">
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-xs text-gray-500">Req: #CUST-991</p>
+                    <p class="font-bold dark:text-white text-sm">3-Tier Gold Foil</p>
+                    <p class="text-xs text-gray-500 mt-1">By: Wedding Planners Co.</p>
+                    <div class="flex gap-2 mt-2">
+                      <button
+                        class="bg-green-100 text-green-700 px-3 py-1 rounded text-[10px] font-bold hover:bg-green-200">Approve</button>
+                      <button
+                        class="bg-red-100 text-red-700 px-3 py-1 rounded text-[10px] font-bold hover:bg-red-200">Reject</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-deliveries" class="content-section hidden space-y-6">
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Delivery Logistics</h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div
+              class="lg:col-span-2 bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-white/5">
+              <h3 class="font-bold dark:text-white mb-4">Today's Dispatch Schedule</h3>
+              <div class="space-y-4">
+                <div
+                  class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center p-4 border border-gray-100 dark:border-gray-800 rounded-2xl border-l-4 border-l-blue-500 bg-blue-50/50 dark:bg-blue-900/10">
+                  <div>
+                    <h4 class="font-bold dark:text-white">Order #ORD-1044</h4>
+                    <p class="text-xs text-gray-500 mt-1"><i class="bi bi-geo-alt-fill text-blue-500"></i> 123 North
+                      Avenue, Block B</p>
+                    <p class="text-xs text-gray-500"><i class="bi bi-person-fill text-blue-500"></i> Driver: Mike T.</p>
+                  </div>
+                  <div class="text-left sm:text-right">
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Out
+                      for Delivery</span>
+                    <p class="text-xs font-bold text-gray-600 dark:text-gray-300 mt-2">ETA: 2:45 PM</p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center p-4 border border-gray-100 dark:border-gray-800 rounded-2xl border-l-4 border-l-yellow-500">
+                  <div>
+                    <h4 class="font-bold dark:text-white">Order #ORD-1045</h4>
+                    <p class="text-xs text-gray-500 mt-1"><i class="bi bi-geo-alt-fill text-yellow-500"></i> Corporate
+                      Park, Building 4</p>
+                    <p class="text-xs text-gray-500"><i class="bi bi-person-fill text-yellow-500"></i> Driver:
+                      Unassigned</p>
+                  </div>
+                  <div class="text-left sm:text-right">
+                    <span
+                      class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Packing</span>
+                    <p class="text-xs font-bold text-gray-600 dark:text-gray-300 mt-2">Slot: 4:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-white/5">
+              <h3 class="font-bold dark:text-white mb-4">Driver Status</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3">
+                  <div class="relative">
+                    <div
+                      class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-gray-500">
+                      MT</div>
+                    <span
+                      class="absolute bottom-0 right-0 w-3 h-3 bg-blue-500 border-2 border-white dark:border-[#1a1a2e] rounded-full"></span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold dark:text-white">Mike T.</p>
+                    <p class="text-[10px] text-gray-500">On Route • 1 package</p>
+                  </div>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="relative">
+                    <div
+                      class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-gray-500">
+                      SJ</div>
+                    <span
+                      class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1a1a2e] rounded-full"></span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold dark:text-white">Sarah J.</p>
+                    <p class="text-[10px] text-gray-500">Available • 0 packages</p>
+                  </div>
+                </li>
+              </ul>
+              <button
+                class="w-full mt-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold py-3 rounded-xl text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Assign
+                Drivers</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-special" class="content-section hidden space-y-6">
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-[#EC4899] dark:text-white">Special Orders & Quotes</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl h-full border border-gray-100 dark:border-gray-800">
+              <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-4 flex justify-between items-center">Needs Quote
+                <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded-full text-xs">2</span></h3>
+              <div class="space-y-3">
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] p-4 rounded-xl shadow-sm border-l-4 border-red-400 cursor-pointer hover:shadow-md transition">
+                  <p class="text-xs text-gray-500 mb-1">#REQ-302 • Corporate</p>
+                  <h4 class="font-bold dark:text-white text-sm">Tech Co. Logo Cake</h4>
+                  <p class="text-[10px] text-gray-500 mt-2"><i class="bi bi-clock"></i> Due: Apr 12</p>
+                  <button class="mt-3 text-xs bg-[#EC4899] text-white px-3 py-1.5 rounded font-bold w-full">Draft
+                    Quote</button>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] p-4 rounded-xl shadow-sm border-l-4 border-red-400 cursor-pointer hover:shadow-md transition">
+                  <p class="text-xs text-gray-500 mb-1">#REQ-303 • Wedding</p>
+                  <h4 class="font-bold dark:text-white text-sm">5-Tier Floral Cascade</h4>
+                  <p class="text-[10px] text-gray-500 mt-2"><i class="bi bi-clock"></i> Due: May 20</p>
+                  <button class="mt-3 text-xs bg-[#EC4899] text-white px-3 py-1.5 rounded font-bold w-full">Draft
+                    Quote</button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl h-full border border-gray-100 dark:border-gray-800">
+              <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-4 flex justify-between items-center">Awaiting
+                Client <span class="bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded-full text-xs">1</span></h3>
+              <div class="space-y-3">
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] p-4 rounded-xl shadow-sm border-l-4 border-yellow-400 cursor-pointer hover:shadow-md transition">
+                  <p class="text-xs text-gray-500 mb-1">#REQ-299 • Birthday</p>
+                  <h4 class="font-bold dark:text-white text-sm">Life-size Guitar Cake</h4>
+                  <p class="text-[10px] font-bold text-[#EC4899] mt-2">Quoted: $350.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl h-full border border-gray-100 dark:border-gray-800">
+              <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-4 flex justify-between items-center">In
+                Production <span class="bg-green-100 text-green-600 px-2 py-0.5 rounded-full text-xs">1</span></h3>
+              <div class="space-y-3">
+                <div
+                  class="bg-white dark:bg-[#1a1a2e] p-4 rounded-xl shadow-sm border-l-4 border-green-400 cursor-pointer hover:shadow-md transition">
+                  <p class="text-xs text-gray-500 mb-1">#REQ-285 • Event</p>
+                  <h4 class="font-bold dark:text-white text-sm">Golden Jubilee Theme</h4>
+                  <p class="text-[10px] text-gray-500 mt-2"><i class="bi bi-person-fill"></i> Head Baker: Chef John</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </main>
@@ -231,7 +587,36 @@
   </div>
 
   <script>
-    // Sidebar toggle
+    // --- SECTION SWITCHING LOGIC ---
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Show the selected section
+      document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+      // Reset all nav links to default styling
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('bg-[#f3dde9]', 'text-[#EC4899]', 'font-semibold');
+        link.classList.add('text-white', 'hover:bg-[#f3dde9]', 'hover:text-[#EC4899]');
+      });
+
+      // Highlight the active nav link
+      const activeLink = document.getElementById('nav-' + sectionId);
+      if (activeLink) {
+        activeLink.classList.remove('text-white', 'hover:bg-[#f3dde9]', 'hover:text-[#EC4899]');
+        activeLink.classList.add('bg-[#f3dde9]', 'text-[#EC4899]', 'font-semibold');
+      }
+
+      // Close sidebar on mobile devices automatically
+      if (window.innerWidth < 1024) {
+        document.getElementById("closeSidebar").click();
+      }
+    }
+
+    // --- SIDEBAR TOGGLE LOGIC ---
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
     const openBtn = document.getElementById("openSidebar");
@@ -250,39 +635,28 @@
       overlay.classList.add("hidden");
     };
 
-    // Theme toggle (Updated to handle both navbar and sidebar buttons)
+    // --- THEME TOGGLE LOGIC ---
     const themeBtns = document.querySelectorAll(".themeToggleBtn");
     const themeIcons = document.querySelectorAll(".themeIcon");
-    
+
     themeBtns.forEach(btn => {
       btn.onclick = () => {
         document.documentElement.classList.toggle("dark");
         const isDark = document.documentElement.classList.contains("dark");
-        // Update all theme icons
         themeIcons.forEach(icon => {
           icon.className = isDark ? "themeIcon bi bi-sun-fill" : "themeIcon bi bi-moon-fill";
         });
       };
     });
 
-    // RTL toggle (Updated to handle both navbar and sidebar buttons)
+    // --- RTL TOGGLE LOGIC ---
     const rtlBtns = document.querySelectorAll(".rtlToggleBtn");
-    
+
     rtlBtns.forEach(btn => {
       btn.onclick = () => {
         document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
       };
     });
-    tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                    },
-                },
-            },
-        }
   </script>
 
 </body>
