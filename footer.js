@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <!-- ABOUT -->
       <div>
         <h1 class="text-2xl font-bold text-white">
-      <a href="index.html">Groww Cakes</a>
+      <a href="index.html">Bake Hub</a>
     </h1>
         <p class="text-pink-100 text-sm leading-relaxed mt-2">
           We specialize in custom cake designs, fresh ingredients, and beautiful desserts
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </li>
           <li class="flex items-center gap-2">
             <i class="bi bi-envelope-fill text-white"></i>
-            <span>info@growwcakes.com</span>
+            <span>info@bakehub.com</span>
           </li>
         </ul>
       </div>
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- BOTTOM BAR -->
   <div class="border-t border-pink-300 py-6 text-center text-pink-100 text-xs px-4">
-    © ${new Date().getFullYear()} Groww Cakes. All Rights Reserved.
+    © ${new Date().getFullYear()} Bake Hub. All Rights Reserved.
   </div>
 
 </footer>

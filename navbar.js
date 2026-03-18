@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Logo -->
     <h1 class="text-2xl font-bold text-white">
-      <a href="index.html">Groww Cakes</a>
+      <a href="index.html">Bake Hub</a>
     </h1>
 
     <!-- Desktop Navigation -->
