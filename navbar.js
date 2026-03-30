@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navbar.innerHTML = `
 <header id="mainNavbar"
-  class="fixed top-0 left-0 w-full z-50 bg-[#EC4899] text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)] transition-all duration-300">
+  class="fixed top-0 left-0 w-full z-50 bg-white text-[#EC4899] shadow-[0_4px_12px_rgba(0,0,0,0.25)] transition-all duration-300">
 
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
     <!-- Logo -->
-    <h1 class="text-2xl font-bold text-white">
+    <h1 class="text-2xl font-bold text-[#EC4899]">
       <a href="index.html">Bake Hub</a>
     </h1>
 
@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </li>
 
         <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="service.html">Services</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
 
         <!-- Dashboard Dropdown -->
@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </li>
 
       <li><a href="about.html" class="block py-2">About</a></li>
-      <li><a href="blog.html" class="block py-2">Blog</a></li>
       <li><a href="service.html" class="block py-2">Services</a></li>
        <li><a href="gallery.html" class="block py-2">Gallery</a></li>
+       <li><a href="blog.html" class="block py-2">Blog</a></li>
       <li><a href="contact.html" class="block py-2">Contact</a></li>
 
       <!-- Dashboard -->

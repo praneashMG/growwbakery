@@ -18,13 +18,15 @@
 
     [data-theme="dark"] {
       --home-bg: #000000;
-      --text-color: #fff;
+      --text-color: #e8e8e8;
     }
 
-    [data-theme="dark"] .card {
-       background-color: rgb(48, 48, 48);
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .card1 {
+      background-color: rgb(48, 48, 48);
     }
-[data-theme="dark"] .title {
+
+    [data-theme="dark"] .title {
       color: white;
     }
 
@@ -46,138 +48,166 @@
 
   <!-- NAVBAR (SAME AS LOGIN) -->
   <nav class="card w-full bg-[#EC4899] text-white shadow-md">
-        <div class="max-w-4xl mx-auto px-6 flex items-center justify-between h-16">
+    <div class="max-w-4xl mx-auto px-6 flex items-center justify-between h-16">
 
-            <h1 class="text-2xl font-bold">
-                <a href="index.html">
-                    Bake Hub
-                </a>
-            </h1>
+      <h1 class="text-2xl font-bold">
+        <a href="index.html">
+          Bake Hub
+        </a>
+      </h1>
 
-            <div class="flex gap-4 text-xl">
-                <button id="rtlToggle">⇄</button>
-                <button id="theme-toggle">
-                    <i class="bi bi-moon-fill"></i>
-                </button>
-            </div>
+      <div class="flex gap-4 text-xl">
+        <button id="rtlToggle">⇄</button>
+        <button id="theme-toggle">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+      </div>
 
-        </div>
-    </nav>
+    </div>
+  </nav>
 
 
   <!-- MAIN -->
-  <div class="flex justify-center items-center min-h-screen px-4 pt-8 mt-[-50px]">
+  <div class="flex justify-center items-center min-h-screen px-4 pt-8 mt-[-30px]">
 
     <div class="flex flex-col lg:flex-row bg-white shadow-xl 
             overflow-hidden w-full max-w-4xl rounded-2xl">
 
       <!-- LEFT MARKETING -->
-      <div class="card1 lg:w-1/2 flex flex-col justify-between p-10 
-            bg-gradient-to-br from-[#EC4899] to-[#B9799D] text-white shadow-lg">
-
-    <div>
-      <h1 class="text-3xl font-bold mb-3">
-        Create Your Groww Cakes Account
-      </h1>
-
-      <p class="mb-6 text-white/90">
-        Sign up to place custom cake orders, track deliveries, and explore our delicious creations.
-      </p>
-
-      <ul class="space-y-3 text-white/90">
-        <li>✔ Easy Custom Cake Orders</li>
-        <li>✔ Track Your Deliveries</li>
-        <li>✔ Exclusive Offers & Updates</li>
-      </ul>
+      <div class="card1 lg:w-1/2 flex flex-col overflow-hidden  bg-white shadow-2xl">
+    
+    <div class="relative h-56 sm:h-64 overflow-hidden">
+        <img src="images/pic2.avif" alt="Cake Decoration" class="w-full h-full object-cover">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#EC4899]/80 to-transparent"></div>
+        
+        <div class="absolute bottom-6 left-8 text-white">
+            <h1 class="text-3xl font-extrabold tracking-tight drop-shadow-lg">
+                Join the Cake Family
+            </h1>
+            <p class="text-pink-100 text-sm font-medium mt-1">Unlock a world of sweet possibilities</p>
+        </div>
     </div>
 
-    <div class="bg-white/20 p-4 rounded-lg text-center mt-10">
-      <p class="font-semibold text-white/90">
-        “A celebration without cake is just a meeting.” <i class="bi bi-cake"></i>
-      </p>
-    </div>
+    <div class="p-8 lg:p-10 flex flex-col justify-between flex-grow">
+        
+        <div>
+            <h2 class="title text-xl font-bold text-gray-800 mb-2">Create Your Account</h2>
+            <p class="title text-gray-600 leading-relaxed mb-8">
+                Sign up to design your dream cake, track your orders in real-time.
+            </p>
 
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="card flex flex-col items-center text-center p-3 rounded-2xl bg-pink-50 transition-transform hover:scale-105">
+                    <i class="bi bi-pencil-square text-[#EC4899] text-xl mb-1"></i>
+                    <span class="title text-xs font-bold text-gray-700">Custom Orders</span>
+                </div>
+                <div class="card flex flex-col items-center text-center p-3 rounded-2xl bg-pink-50 transition-transform hover:scale-105">
+                    <i class="bi bi-geo-alt text-[#EC4899] text-xl mb-1"></i>
+                    <span class="title text-xs font-bold text-gray-700">Live Order Tracking</span>
+                </div>
+                <div class="card flex flex-col items-center text-center p-3 rounded-2xl bg-pink-50 transition-transform hover:scale-105">
+                    <i class="bi bi-gift text-[#EC4899] text-xl mb-1"></i>
+                    <span class="title text-xs font-bold text-gray-700">Exclusive Deals</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="title flex items-center justify-center gap-3 py-4 border-t border-gray-100 italic text-gray-500 text-sm">
+            <i class="bi bi-quote text-[#EC4899] text-lg"></i>
+            A celebration without cake is just a meeting.
+        </div>
+        
+    </div>
 </div>
 
       <!-- RIGHT SIGN UP -->
       <div class="card lg:w-1/2 p-10 flex flex-col justify-center bg-white shadow-lg">
 
-    <div class="max-w-md mx-auto w-full">
+        <div class="max-w-md mx-auto w-full">
 
-      <h2 class="title text-2xl font-bold mb-6 text-center text-[#EC4899]">
-        Create Your Account
-      </h2>
+          <h2 class="title text-2xl font-bold mb-6 text-center text-[#EC4899]">
+            Create Your Account
+          </h2>
 
-      <form class="space-y-4">
+          <form class="space-y-4">
 
-        <div class="flex gap-4">
-          <input type="text" placeholder="First Name"
-            class="w-1/2 p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+            <div class="flex gap-4">
+              <input type="text" placeholder="First Name"
+                class="w-1/2 p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
 
-          <input type="text" placeholder="Last Name"
-            class="w-1/2 p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+              <input type="text" placeholder="Last Name"
+                class="w-1/2 p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+            </div>
+
+            <input type="email" placeholder="Email Address"
+              class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+
+            <div class="flex flex-col gap-4">
+              <div class="relative">
+                <input type="password" id="signPassword" placeholder="Password"
+                  class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899] pr-10" required>
+                <i class="bi bi-eye-slash absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-[#EC4899]"
+                  id="toggleSignPassword"></i>
+              </div>
+              <div class="relative">
+                <input type="password" id="signConfirmPassword" placeholder="Confirm Password"
+                  class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899] pr-10" required>
+                <i class="bi bi-eye-slash absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-[#EC4899]"
+                  id="toggleSignConfirmPassword"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <input type="checkbox" id="terms" class="accent-[#EC4899]" required>
+              <label for="terms">I agree to Terms & Conditions</label>
+            </div>
+
+            <button
+              class="w-full bg-[#EC4899] hover:bg-[#B9799D] text-white py-3 rounded-lg font-bold transition duration-300">
+              Sign Up
+            </button>
+
+          </form>
+
+          <!-- OR DIVIDER -->
+          <div class="my-4 flex items-center">
+            <hr class="flex-grow border-gray-300">
+            <span class="px-2 text-gray-400 text-sm">Or continue with</span>
+            <hr class="flex-grow border-gray-300">
+          </div>
+
+          <!-- SOCIAL ICON BUTTONS -->
+          <div class="flex gap-4">
+
+            <!-- Google -->
+            <button type="button" class="flex-1 py-2 border rounded-lg 
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
+              <i class="bi bi-google text-lg"></i>
+            </button>
+
+            <!-- Facebook -->
+            <button type="button" class="flex-1 py-2 border rounded-lg 
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
+              <i class="bi bi-facebook text-lg"></i>
+            </button>
+
+            <!-- Apple -->
+            <button type="button" class="flex-1 py-2 border rounded-lg 
+        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
+              <i class="bi bi-apple text-lg"></i>
+            </button>
+
+          </div>
+
+          <p class="mt-6 text-center text-sm">
+            Already have an account?
+            <a href="login.html" class="title text-[#EC4899] font-semibold">
+              Login
+            </a>
+          </p>
+
         </div>
-
-        <input type="email" placeholder="Email Address"
-          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
-        
-        <div class="flex gap-4">
-        <input type="password" placeholder="Password"
-          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
-        <input type="password" placeholder="Confirm Password"
-          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
-</div>
-        <div class="flex items-center gap-2 text-sm">
-          <input type="checkbox" id="terms" class="accent-[#EC4899]" required>
-          <label for="terms">I agree to Terms & Conditions</label>
-        </div>
-
-        <button
-          class="w-full bg-[#EC4899] hover:bg-[#B9799D] text-white py-3 rounded-lg font-bold transition duration-300">
-          Sign Up
-        </button>
-
-      </form>
-
-      <!-- OR DIVIDER -->
-      <div class="my-4 flex items-center">
-        <hr class="flex-grow border-gray-300">
-        <span class="px-2 text-gray-400 text-sm">Or continue with</span>
-        <hr class="flex-grow border-gray-300">
       </div>
-
-      <!-- SOCIAL ICON BUTTONS -->
-      <div class="flex gap-4">
-
-        <!-- Google -->
-        <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
-          <i class="bi bi-google text-lg"></i>
-        </button>
-
-        <!-- Facebook -->
-        <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
-          <i class="bi bi-facebook text-lg"></i>
-        </button>
-
-        <!-- Apple -->
-        <button type="button" class="flex-1 py-2 border rounded-lg 
-        hover:bg-[#FFE6F0] transition duration-300 hover:text-black">
-          <i class="bi bi-apple text-lg"></i>
-        </button>
-
-      </div>
-
-      <p class="mt-6 text-center text-sm">
-        Already have an account?
-        <a href="login.html" class="title text-[#EC4899] font-semibold">
-          Login
-        </a>
-      </p>
-
-    </div>
-</div>
 
     </div>
   </div>
@@ -211,14 +241,28 @@
         : '<i class="bi bi-moon-fill"></i>';
     }
     tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                    },
-                },
-            },
-        }
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+
+    // Password visibility toggles
+    function setupToggle(toggleId, inputId) {
+      const toggle = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+      toggle.addEventListener('click', function () {
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+      });
+    }
+    setupToggle('toggleSignPassword', 'signPassword');
+    setupToggle('toggleSignConfirmPassword', 'signConfirmPassword');
 
   </script>
 

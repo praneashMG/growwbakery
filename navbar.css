@@ -22,7 +22,7 @@ body {
   bottom: -6px;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: #EC4899;
   border-radius: 2px;
 }
 
@@ -50,32 +50,38 @@ body {
 [data-theme="dark"] #homeDropdownMenu {
   background-color: #000000 !important;
 }
+
 [data-theme="dark"] #homeDropdownMenu a:hover {
   color: #000000 !important;
 }
-[data-theme="dark"] #dashboardDropdownMenu, 
-[data-theme="dark"] #profileMenu{
+
+[data-theme="dark"] #dashboardDropdownMenu,
+[data-theme="dark"] #profileMenu {
   background-color: #000000 !important;
 }
+
 [data-theme="dark"] #dashboardDropdownMenu a:hover,
 [data-theme="dark"] #profileMenu a:hover {
   color: #000000 !important;
 }
-[data-theme="dark"] #mainNavbar, 
-[data-theme="dark"] #mobileMenu{
+
+[data-theme="dark"] #mainNavbar,
+[data-theme="dark"] #mobileMenu {
   background-color: #353535 !important;
 }
 
 @media (max-width: 1441px) {
   [dir="rtl"] #profileMenu {
-  margin-right: -120px;
+    margin-right: -120px;
+  }
 }
-}
+
 @media (max-width: 1281px) {
   [dir="rtl"] #profileMenu {
-  margin-right: -150px !important;
+    margin-right: -150px !important;
+  }
 }
-}
+
 @media (max-width: 1024px) {
   .center ul {
     gap: 20px;
@@ -127,8 +133,12 @@ body {
   animation: slideDown 0.3s ease-out;
 }
 
- [dir="rtl"] #mobileProfileMenu {
+[dir="rtl"] #mobileProfileMenu {
   margin-right: -120px;
+}
+
+#hamburgerBtn i {
+  color: #EC4899;
 }
 
 @keyframes slideDown {
@@ -168,6 +178,7 @@ body {
 
   #hamburgerBtn i {
     font-size: 20px;
+    color: #EC4899;
   }
 
   #closeMenuBtn {
@@ -178,7 +189,7 @@ body {
     gap: 1rem;
   }
 
-   [dir="rtl"] #mobileProfileMenu {
+  [dir="rtl"] #mobileProfileMenu {
     margin-right: -110px;
   }
 }
@@ -191,8 +202,8 @@ body {
   color: white !important;
 }
 
-.h5{
-    color: #EC4899;
-    color: #b9799d;
-    color: #e89cc6;
+.h5 {
+  color: #EC4899;
+  color: #b9799d;
+  color: #e89cc6;
 }

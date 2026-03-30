@@ -23,7 +23,8 @@
             --text-color: #fff;
         }
 
-        [data-theme="dark"] .card {
+        [data-theme="dark"] .card,
+          [data-theme="dark"] .card1 {
             background-color: rgb(48, 48, 48);
         }
 
@@ -74,110 +75,125 @@
     <!-- MAIN -->
     <div class="flex justify-center items-center min-h-screen px-4 pt-8 mt-[-60px]">
 
-        <div class="flex flex-col lg:flex-row bg-white rounded-2xl shadow-xl 
+        <div class="card flex flex-col lg:flex-row bg-white rounded-2xl shadow-xl 
             overflow-hidden w-full max-w-4xl ">
 
             <!-- LEFT MARKETING -->
-            <div class="card1 lg:w-1/2 flex flex-col justify-between p-10 
-            bg-gradient-to-br from-[#EC4899] to-[#B9799D] text-white shadow-lg">
-
-    <div>
-        <h1 class="text-3xl font-bold mb-3">
-            Celebrate Sweet Moments with Groww Cakes
-        </h1>
-
-        <p class="mb-6 text-white/90">
-            Discover our handcrafted cakes, cupcakes, and desserts made with premium ingredients.
-        </p>
-
-        <ul class="space-y-3 text-white/90">
-            <li>✔ Freshly Baked Every Day</li>
-            <li>✔ Customized Cake Designs</li>
-            <li>✔ Fast & Safe Delivery</li>
-        </ul>
+            <div class="card1 lg:w-1/2 flex flex-col overflow-hidden bg-white shadow-2xl transition-hover hover:shadow-pink-200/50">
+    
+    <div class="relative h-64 sm:h-72 overflow-hidden">
+        <img src="images/pic2.avif" alt="Handcrafted Cake" class="w-full h-full object-cover">
+        <div class="absolute top-4 right-4 bg-[#EC4899] text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+            Freshly Baked
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-6">
+            <span class="text-pink-200 text-sm font-semibold uppercase tracking-widest">Premium Quality</span>
+            <h2 class="text-white text-2xl font-bold">Bake Hub</h2>
+        </div>
     </div>
 
-    <div class="bg-white/20 p-4 rounded-lg text-center mt-10">
-        <p class="font-semibold text-white/90">
-            “A celebration without cake is just a meeting.” <i class="bi bi-cake"></i>
-        </p>
-    </div>
+    <div class="card p-8 flex flex-col justify-between flex-grow">
+        <div>
+            <h1 class="title text-3xl font-extrabold text-gray-800 leading-tight mb-3">
+                Celebrate Sweet Moments
+            </h1>
+        </div>
 
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="title flex items-center gap-2 text-sm font-medium text-gray-700">
+                <i class="bi bi-palette text-[#EC4899]"></i> Custom Designs
+            </div>
+            <div class="title flex items-center gap-2 text-sm font-medium text-gray-700">
+                <i class="bi bi-truck text-[#EC4899]"></i> Safe Delivery
+            </div>
+        </div>
+
+        <div class="card border-l-4 border-[#EC4899] bg-pink-50 p-4 rounded-r-lg">
+            <p class="title italic text-gray-700 text-sm">
+                “A celebration without cake is just a meeting.”
+            </p>
+        </div>
+    </div>
 </div>
 
             <!-- RIGHT LOGIN -->
             <div class="card lg:w-1/2 p-10 flex flex-col justify-center bg-white shadow-lg">
 
-    <div class="max-w-md mx-auto w-full">
+                <div class="max-w-md mx-auto w-full">
 
-        <h2 class="title text-2xl font-bold mb-6 text-center text-[#EC4899]">
-            Login
-        </h2>
+                    <h2 class="title text-2xl font-bold mb-6 text-center text-[#EC4899]">
+                        Login
+                    </h2>
 
-        <form class="space-y-4">
+                    <form class="space-y-4">
 
-            <div>
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg border 
+                        <div>
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg border 
        focus:ring-2 focus:ring-[#EC4899]" required>
-            </div>
+                        </div>
 
-            <div>
-                <label>Password</label>
-                <input type="password" placeholder="Enter password" class="w-full p-3 rounded-lg border 
-       focus:ring-2 focus:ring-[#EC4899]" required>
-            </div>
+                        <div>
+                            <label>Password</label>
+                            <div class="relative">
+                                <input type="password" id="password" placeholder="Enter password" class="w-full p-3 rounded-lg border 
+                                    focus:ring-2 focus:ring-[#EC4899] pr-10" required>
+                                <i class="bi bi-eye-slash absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 hover:text-[#EC4899]"
+                                    id="togglePassword"></i>
+                            </div>
+                        </div>
 
-            <div class="flex items-center justify-between gap-3 text-xs sm:text-sm">
+                        <div class="flex items-center justify-between gap-3 text-xs sm:text-sm">
 
-                <div class="flex items-center gap-2 whitespace-nowrap">
-                    <input type="checkbox" id="remember" class="w-4 h-4 accent-[#EC4899]">
-                    <label for="remember" class="cursor-pointer">
-                        Remember me
-                    </label>
-                </div>
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <input type="checkbox" id="remember" class="w-4 h-4 accent-[#EC4899]">
+                                <label for="remember" class="cursor-pointer">
+                                    Remember me
+                                </label>
+                            </div>
 
-                <a href="#" class="title text-[#EC4899] font-semibold whitespace-nowrap">
-                    Forgot Password?
-                </a>
+                            <a href="#" class="title text-[#EC4899] font-semibold whitespace-nowrap">
+                                Forgot Password?
+                            </a>
 
-            </div>
+                        </div>
 
-            <button class="w-full bg-[#EC4899] hover:bg-[#B9799D] 
+                        <button class="w-full bg-[#EC4899] hover:bg-[#B9799D] 
                text-white py-3 rounded-lg font-bold mt-4 
                transition duration-300">
-                Sign In
-            </button>
+                            Sign In
+                        </button>
 
-        </form>
+                    </form>
 
-        <div class="my-4 flex items-center">
-            <hr class="flex-grow">
-            <span class="px-2 text-gray-400 text-sm">Or continue with</span>
-            <hr class="flex-grow">
-        </div>
+                    <div class="my-4 flex items-center">
+                        <hr class="flex-grow">
+                        <span class="px-2 text-gray-400 text-sm">Or continue with</span>
+                        <hr class="flex-grow">
+                    </div>
 
-        <div class="flex gap-4">
-            <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
-                <i class="bi bi-google"></i>
-            </button>
-            <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
-                <i class="bi bi-facebook"></i>
-            </button>
-            <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
-                <i class="bi bi-apple"></i>
-            </button>
-        </div>
+                    <div class="flex gap-4">
+                        <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
+                            <i class="bi bi-google"></i>
+                        </button>
+                        <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
+                            <i class="bi bi-facebook"></i>
+                        </button>
+                        <button class="btn flex-1 py-2 border rounded-lg hover:bg-[#FFE6F0]">
+                            <i class="bi bi-apple"></i>
+                        </button>
+                    </div>
 
-        <p class="mt-6 text-center text-sm">
-            New to Groww Cakes?
-            <a href="sign.html" class="title text-[#EC4899] font-semibold">
-                Create Account
-            </a>
-        </p>
+                    <p class="mt-6 text-center text-sm">
+                        New to Groww Cakes?
+                        <a href="sign.html" class="title text-[#EC4899] font-semibold">
+                            Create Account
+                        </a>
+                    </p>
 
-    </div>
-</div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -220,6 +236,17 @@
                 },
             },
         }
+
+        // Password Visibility Toggle
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
+        });
 
     </script>
 
